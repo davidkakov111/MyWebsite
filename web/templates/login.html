@@ -1,0 +1,16 @@
+{%extends "base.html"%}
+{%block title%}
+Log in
+{%endblock title%}
+{%block content%}
+    <h1><b>Log in!</b></h1>
+    <form method="post">
+        {% csrf_token %}
+        <br>
+        <label for="email">Email address:</label>
+        <input type="email" placeholder="blablabla@example.com" id="email" name="email" required><br><br>
+        <label for="password">Password:</label>
+        <input type="password" placeholder="password" id="password" name="password" required><br>
+        <input class="btn btn-success mb-4 mt-4" type="submit" id = "submit" name="submit" value="Log in"><br><br>
+    </form>
+{%endblock content%}

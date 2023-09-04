@@ -1,0 +1,66 @@
+{%extends 'base.html'%}
+
+{%block title%}
+    Game
+{%endblock title%}
+
+{%block style%}
+.image-container {
+    display: flex;
+    overflow: auto;
+    white-space: nowrap;
+}
+.image-container img {
+    max-width: 50%;
+    height: auto;
+    margin-right: 5px;
+    margin-left: 5px
+}
+.center {
+  display: block;
+  margin: 0 auto;
+}
+
+{%endblock style%}
+
+{%block content%}
+    <h1>My first game!</h1>
+    <br>
+    <p>This is the first larger-scale 2D game that I've created, written in <a href="https://www.python.org/">Python</a> programing language, using the <a href="https://api.arcade.academy/en/latest/">Arcade</a> game developer module. 
+    This game turned out to be quite large, but I believe it was worth the invested energy because it has become a very enjoyable game!
+    In this game you are the main character, a businessman, who tries to collect bitcoins throughout the challenges of the game, guarded by animals and other dangerous creatures.
+    These entities inflict damage upon contact, so it's better to avoid them to prevent any fatal consequences. But don't forget to collect the bitcoins that these entities guard, because if you successfully gather all 20 bitcoins, I'll reward you with a heartfelt thank you! 
+    Below, you'll find images of the game and instructions for downloading. I wish you a pleasant gaming experience! </p>
+    <br>
+    {%load static%}
+    <div class="image-container">
+        <img src="{% static 'game1.jpg' %}" alt="Game 1">
+        <img src="{% static 'game2.jpg' %}" alt="Game 2">
+        <img src="{% static 'game3.jpg' %}" alt="Game 3">
+    </div>
+    <br>
+    <details>
+        <summary>Click here for the guide for <b>downloading</b> and <b>launching</b> the Game!</summary>
+        <ol>
+            <li>Click on the button labeled 'Download'.</li>
+            <li><abbr title="Click on the three buttons located on the right side of the file, and within that, click on 'Download'.">Download</abbr> the 'ANIMAL_INVASION' file.</li>
+            <li>After the download is complete, <abbr title="Right-click on the folder, then click on the option 'Extract All' button. After that, choose the destination folder where you want to extract the files.">extract the files</abbr>.</li>
+            <li>Afterward, open the <abbr title="The folder name is ANIMAL_INVASION-..."> extracted folder</abbr>.</li>
+            <li>Also open the next <abbr title="The folder name is ANIMAL_INVASION"> folder</abbr>.</li>
+            <li>Open the folder named 'dist'.</li>
+            <li>Open the next <abbr title="The folder name is ANIMAL_INVASION"> folder </abbr> as well.</li>
+            <li>To start the game, open the ANIMAL_INVASION.exe file.</li>
+            <li>It's possible that your computer might hesitate to open <br>
+                 the file due to potential risks associated with .exe files. <br> 
+                 However, you can confidently proceed to open it as this is just a game.</li>
+            <li>I wish you the best of luck with your gameplay!"</li>
+        </ol>
+    </details>
+    <br>
+    <p>Are you up for the challenge? By clicking the button below, you can download and dive headfirst into the adventure.</p>
+    <p>Download it now!</p>
+    <br>
+    <button class="center btn btn-outline-success" onclick='location.href="https://drive.google.com/drive/folders/1xOY1ccBexdsiACC4xmgnKYBReN-Oozu_?usp=sharing"' >Download</button>
+    <br>
+    <br>
+{%endblock content%}

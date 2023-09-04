@@ -1,0 +1,7 @@
+{%extends "base.html"%}
+{%block title%}
+Existing account
+{%endblock title%}
+{%block content%}
+    <h3>This email address is already in use! <a href="{%url 'login'%}"> Log in </a> or <a href="{%url 'signup'%}"> Sign up</a>!</h3>
+{%endblock content%}

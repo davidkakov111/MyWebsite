@@ -1,0 +1,18 @@
+{%extends "base.html"%}
+{%block title%}
+Sign up
+{%endblock title%}
+{%block content%}
+    <h1><b>Sign up!</b></h1>
+    <form method="post">
+        {% csrf_token %}
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" placeholder="blablabla@example.com" id="email" name="email" required><br><br>
+        <label for="password">Password:</label>
+        <input type="password" placeholder="password" id="password" name="password" required><br><br>
+        <label for="pasword">Confirm password:</label>
+        <input type="password" placeholder="password" id="pasword" name="pasword" required><br>
+        <input class="btn btn-success mb-4 mt-4" type="submit" id = "submit" name="submit" value="Sign up"><br><br>
+    </form>
+{%endblock content%}
