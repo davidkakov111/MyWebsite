@@ -2,6 +2,22 @@
 {%block title%}
 Unsuccessful log in
 {%endblock title%}
+{%block style%}
+h1 {
+    text-align: center;
+    margin-top: 3%;
+}
+img {
+    max-height: 70%;
+    display: block;
+    margin: 0 auto;
+}
+body {
+    background-color: rgb(255, 0, 0, 0.3);
+}
+{%endblock style%}
 {%block content%}
-    <h3>Unsuccessful log in! Try <a href="{%url 'login'%}"> again</a>!</h3>
+    <h1>Incorrect login credentials! Try <a href="{%url 'login'%}"> again</a>!</h1>
+    {%load static%}
+    <img src="{%static 'stop.png'%}" alt="Again!">
 {%endblock content%}

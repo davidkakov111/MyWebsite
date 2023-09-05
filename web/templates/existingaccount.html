@@ -2,6 +2,22 @@
 {%block title%}
 Existing account
 {%endblock title%}
+{%block style%}
+h1 {
+    text-align: center;
+    margin-top: 3%;
+}
+img {
+    max-height: 70%;
+    display: block;
+    margin: 0 auto;
+}
+body {
+    background-color: rgb(255, 0, 0, 0.3);
+}
+{%endblock style%}
 {%block content%}
-    <h3>This email address is already in use! <a href="{%url 'login'%}"> Log in </a> or <a href="{%url 'signup'%}"> Sign up</a>!</h3>
+    <h1>This email address is already in use! <a href="{%url 'login'%}"> Log in </a> or <a href="{%url 'signup'%}"> Sign up</a>!</h1>
+    {%load static%}
+    <img src="{%static 'stop.png'%}" alt="Again!">
 {%endblock content%}

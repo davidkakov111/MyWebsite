@@ -1,9 +1,7 @@
 {%extends 'base.html'%}
-
 {%block title%}
     Game
 {%endblock title%}
-
 {%block style%}
 .image-container {
     display: flex;
@@ -20,13 +18,35 @@
   display: block;
   margin: 0 auto;
 }
-
+h1 {
+text-align: center;
+}
+body {
+    background-color: lightblue;
+}
+.island {
+    position: absolute;
+    left: 13%;
+    right: 13%;
+    max-width: 100%;
+    top: 10.9%;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 2%;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    bottom: auto;
+}
+.bekezdes-belul {
+    text-indent: 25px;
+}
+p {
+    font-size: 18px;
+}
 {%endblock style%}
-
 {%block content%}
-    <h1>My first game!</h1>
+<div class="island">
+    <h1>Animal invasion!</h1>
     <br>
-    <p>This is the first larger-scale 2D game that I've created, written in <a href="https://www.python.org/">Python</a> programing language, using the <a href="https://api.arcade.academy/en/latest/">Arcade</a> game developer module (<a href="https://github.com/davidkakov111/My_Game.git">Check it out on github</a>). 
+    <p class="bekezdes-belul">This is the first larger-scale 2D game that I've created, written in <a href="https://www.python.org/">Python</a> programing language, using the <a href="https://api.arcade.academy/en/latest/">Arcade</a> game developer module (<a href="https://github.com/davidkakov111/My_Game.git">Check it out on github</a>). 
     This game turned out to be quite large, but I believe it was worth the invested energy because it has become a very enjoyable game!
     In this game you are the main character, a businessman, who tries to collect bitcoins throughout the challenges of the game, guarded by animals and other dangerous creatures.
     These entities inflict damage upon contact, so it's better to avoid them to prevent any fatal consequences. But don't forget to collect the bitcoins that these entities guard, because if you successfully gather all 20 bitcoins, I'll reward you with a heartfelt thank you! 
@@ -38,6 +58,7 @@
         <img src="{% static 'game2.jpg' %}" alt="Game 2">
         <img src="{% static 'game3.jpg' %}" alt="Game 3">
     </div>
+    <br>
     <br>
     <details>
         <summary>Click here for the guide for <b>downloading</b> and <b>launching</b> the Game!</summary>
@@ -51,16 +72,16 @@
             <li>Open the next <abbr title="The folder name is ANIMAL_INVASION"> folder </abbr> as well.</li>
             <li>To start the game, open the ANIMAL_INVASION.exe file.</li>
             <li>It's possible that your computer might hesitate to open <br>
-                 the file due to potential risks associated with .exe files. <br> 
-                 However, you can confidently proceed to open it as this is just a game.</li>
+                the file due to potential risks associated with .exe files. <br> 
+                However, you can confidently proceed to open it as this is just a game.</li>
             <li>I wish you the best of luck with your gameplay!"</li>
         </ol>
     </details>
     <br>
-    <p>Are you up for the challenge? By clicking the button below, you can download and dive headfirst into the adventure.</p>
-    <p>Download it now!</p>
+    <p class="bekezdes-belul">Are you up for the challenge? By clicking the button below, you can download and dive headfirst into the adventure. <b>Download it now!</b></p>
     <br>
     <button class="center btn btn-outline-success" onclick='location.href="https://drive.google.com/drive/folders/1xOY1ccBexdsiACC4xmgnKYBReN-Oozu_?usp=sharing"' >Download</button>
     <br>
     <br>
+</div>
 {%endblock content%}
