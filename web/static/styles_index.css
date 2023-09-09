@@ -2,3 +2,42 @@ body {
     background-image: url('bg.jpg');
     background-size: cover;
 }
+.navbar-brand{
+    padding: 5px;
+    border-radius: 100px;
+}
+.navbar-brand:hover {
+    background-color: rgba(0, 195, 255, 0.877);
+    border-radius: 100px;
+    box-shadow: 0px 0px 10px 5px rgb(0, 195, 255, 1);
+}
+.nav-item{
+    border-radius: 80px;
+}
+.nav-item:hover {
+    background-color: rgba(0, 195, 255, 0.877);
+    box-shadow: 0px 0px 10px 5px rgba(0, 195, 255, 1);
+}
+.navbar .dropdown-menu {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+}
+.navbar .dropdown-item {
+    background-color: rgba(0, 0, 0, 0);
+    color: #ffffff;
+}
+.navbar .dropdown-item:hover {
+    box-shadow: 0px 0px 10px 5px rgba(0, 195, 255, 1);
+    background-color: rgba(0, 195, 255, 0.877);
+    border-radius: 10px;
+}
+.center-aligned-image {
+    display: block;
+    margin: 0 auto;
+    margin-left: 26%;
+}
+.container {
+    text-align: center;
+    margin-top: 7%;
+    color: white;
+}
