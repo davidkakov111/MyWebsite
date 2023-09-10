@@ -19,5 +19,7 @@ body {
 {%block content%}
     <h1>Successfull log in! Back to <a href="{%url 'homepage'%}"> homepage</a>! </h1>
     {%load static%}
-    <img src="{% static 'baby_meme.png' %}" alt="Yess!!!">
+    <div>
+        <img src="{% static 'baby_meme.png' %}" alt="Yess!!!">
+    </div>
 {%endblock content%}

@@ -19,5 +19,7 @@ body {
 {%block content%}
     <h1>This email address is already in use! <a href="{%url 'login'%}"> Log in </a> or <a href="{%url 'signup'%}"> Sign up</a>!</h1>
     {%load static%}
-    <img src="{%static 'stop.png'%}" alt="Again!">
+    <div>
+        <img src="{%static 'stop.png'%}" alt="Again!">
+    </div>
 {%endblock content%}

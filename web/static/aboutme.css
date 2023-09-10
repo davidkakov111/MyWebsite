@@ -1,0 +1,42 @@
+.island {
+    position: absolute;
+    left: 15%;
+    right: 15%;
+    max-width: 100%;
+    top: 14%;
+    background-color: rgba(255, 255, 0, 0.5);
+    padding: 2%;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    bottom: auto;
+}
+.text {
+    position: absolute;
+    top: 48%;
+    left: 55%;
+    transform: translate(-30%, -80%);
+    background-color: rgba(255, 255, 255, 0);
+    padding: 10px;
+}
+p {
+    font-size: 18px;
+}
+h1 {
+    text-align: center;
+}
+.space {
+    text-indent: 25px;
+}
+.img_me {
+    position: relative;
+    top: 18%;
+}
+.click_img {
+    display: block;
+    margin-left: 52%;
+    position: relative;
+    top: -80px;
+}
+.box1 {
+    width: 110px;
+    margin-left: 44%;
+}

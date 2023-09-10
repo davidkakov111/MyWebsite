@@ -2,65 +2,10 @@
 {%block title%}
     Game
 {%endblock title%}
-{%block style%}
-.image-container {
-    display: flex;
-    overflow: auto;
-    white-space: nowrap;
-}
-.image-container img {
-    max-width: 50%;
-    height: auto;
-    margin-right: 5px;
-    margin-left: 5px
-}
-.center {
-  display: block;
-  margin: 0 auto;
-}
-h1 {
-text-align: center;
-}
-body {
-    background-color: gray;
-}
-.island {
-    position: absolute;
-    left: 13%;
-    right: 13%;
-    max-width: 100%;
-    top: 14%;
-    background-color: rgba(255, 255, 0, 0.5);
-    padding: 2%;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
-    bottom: auto;
-}
-.space {
-    text-indent: 25px;
-}
-p {
-    font-size: 18px;
-}
-.download {
-    display: block;
-    margin: 0 auto;
-    border-radius: 20px;
-    font-size: 16px;
-    background-color: rgba(0, 200, 0, 0.7);
-    color: rgba(255, 255, 255, 1);
-    border: 1px solid rgba(0, 170, 0, 1);
-    padding: 10px 20px;
-    cursor: pointer;
-    box-shadow: 8px 4px 4px rgba(0, 0, 0, 0.4);
-    font-weight: 600;
-}
-.download:hover {
-    color: rgba(200, 200, 200, 1);
-    border: 1px solid rgba(0, 230, 0, 1);
-    box-shadow: none;
-    background-color: rgba(0, 160, 0, 1);
-}
-{%endblock style%}
+{%block head%}
+{%load static%}
+<link rel="stylesheet" type="text/css" href="{% static 'game.css' %}">
+{%endblock head%}
 {%block content%}
 <div class="island">
     <h1>Animal invasion!</h1>
@@ -71,13 +16,11 @@ p {
     These entities inflict damage upon contact, so it's better to avoid them to prevent any fatal consequences. But don't forget to collect the bitcoins that these entities guard, because if you successfully gather all 20 bitcoins, I'll reward you with a heartfelt thank you! 
     Below, you'll find images of the game and instructions for downloading. I wish you a pleasant gaming experience! </p>
     <br>
-    {%load static%}
     <div class="image-container">
         <img src="{% static 'game1.jpg' %}" alt="Game 1">
         <img src="{% static 'game2.jpg' %}" alt="Game 2">
         <img src="{% static 'game3.jpg' %}" alt="Game 3">
     </div>
-    <br>
     <br>
     <details>
         <summary>Click here for the guide for <b>downloading</b> and <b>launching</b> the Game!</summary>
@@ -99,8 +42,8 @@ p {
     <br>
     <p class="space">Are you up for the challenge? By clicking the button below, you can download and dive headfirst into the adventure. <b>Download it now!</b></p>
     <br>
-    <button class="download" onclick='location.href="https://drive.google.com/drive/folders/1xOY1ccBexdsiACC4xmgnKYBReN-Oozu_?usp=sharing"'>Download</button>
-    <br>
-    <br>
+    <div class="btton">
+        <button class="download" onclick='location.href="https://drive.google.com/drive/folders/1xOY1ccBexdsiACC4xmgnKYBReN-Oozu_?usp=sharing"'>Download</button>
+    </div>
 </div>
 {%endblock content%}

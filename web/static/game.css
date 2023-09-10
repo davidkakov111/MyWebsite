@@ -1,0 +1,58 @@
+.image-container {
+    display: flex;
+    overflow: auto;
+    white-space: nowrap;
+}
+.image-container img {
+    max-width: 50%;
+    height: auto;
+    margin-right: 5px;
+    margin-left: 5px
+}
+h1 {
+text-align: center;
+}
+.island {
+    position: absolute;
+    left: 13%;
+    right: 13%;
+    max-width: 100%;
+    top: 14%;
+    background-color: rgba(255, 255, 0, 0.5);
+    padding: 2%;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    bottom: auto;
+}
+.space {
+    text-indent: 25px;
+}
+p {
+    font-size: 18px;
+}
+.download {
+    position: absolute;
+    display: block;
+    margin: 0 auto;
+    border-radius: 20px;
+    font-size: 16px;
+    background-color: rgba(0, 200, 0, 0.7);
+    color: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(0, 170, 0, 1);
+    padding: 10px 20px;
+    cursor: pointer;
+    box-shadow: 5px 4px 4px rgba(0, 0, 0, 0.4);
+    font-weight: 600;
+    left: 44%;
+}
+.download:hover {
+    color: rgba(200, 200, 200, 1);
+    border: 1px solid rgba(0, 230, 0, 1);
+    box-shadow: none;
+    background-color: rgba(0, 160, 0, 1);
+    font-weight: 530;
+    font-size: 15px;
+}
+.btton {
+    position: relative;
+    margin-bottom: 50px;
+}
