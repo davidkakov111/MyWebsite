@@ -1,63 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {%load static%}
-    <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    {%load static%}
+    <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
 </head>
 <body>
-    <nav class="navbar navbar-expand-md navbar-dark mb-4" style="background-color: rgba(51, 51, 51, 0);"> 
-        <div class="container-fluid">
-          <a class="navbar-brand" href="{%url 'homepage'%}">Home</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav me-auto mb-2 mb-md-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{%url "aboutme"%}">About me</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{%url 'game'%}">Game</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="dropdownmenu" role="button" data-bs-toggle="dropdown" aria-expanded="False">
-                  More
-                </a>
-                <div class="dropdown-menu" aria-labelledby="dropdownmenu">
-                  <a class="dropdown-item" onclick="location.href='{%url "homepage"%}'">Home page</a>
-                  <a class="dropdown-item" onclick="location.href='{%url "aboutme"%}'">About me</a>
-                  <a class="dropdown-item" onclick="location.href='{%url "game"%}'">Game</a>
-                  <a class="dropdown-item" onclick="location.href='{%url "signup"%}'">Sign up</a>
-                  <a class="dropdown-item" onclick="location.href='{%url "login"%}'">Log in</a>
-                </div>
-              </li>
-            </ul> 
-            {% load static %}
-            <img src="{% static 'logo.png'%}" alt="My image" width="5%" class="center-aligned-image">
-            <ul class="navbar-nav me-auto" style="margin-left: 35%;">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{%url "signup"%}">Sign up</a>
-              </li>
-              <li>
-                <a class="nav-link active" aria-current="page" href="#">|</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{%url "login"%}">Log in</a>
-              </li>
-            </ul>
+  <div class="fullscreen-bg">
+    <video src="../static/background.mp4" class="fullscreen" loop muted autoplay></video>
+  </div>
+  <nav class="navbar navbar-expand-md navbar-dark mb-4" style="background-color: rgba(0, 0, 0, 0)">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#"></a>
+          </li>
+          <li class="nav-item nai">
+            <a class="nav-link active" id="Home" aria-current="page" href="{%url "homepage"%}">Home</a>
+          </li>
+          <li class="nav-item nai">
+            <a class="nav-link active" aria-current="page" href="{%url "aboutme"%}">About me</a>
+          </li>
+          <li class="nav-item nai">
+            <a class="nav-link active" aria-current="page" href="{%url 'game'%}">Game</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdownmenu" role="button" data-bs-toggle="dropdown" aria-expanded="False">
+              More
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownmenu">
+              <a class="dropdown-item" onclick="location.href='{%url "homepage"%}'">Home page</a>
+              <a class="dropdown-item" onclick="location.href='{%url "aboutme"%}'">About me</a>
+              <a class="dropdown-item" onclick="location.href='{%url "game"%}'">Game</a>
+              <a class="dropdown-item" onclick="location.href='{%url "signup"%}'">Sign up</a>
+              <a class="dropdown-item" onclick="location.href='{%url "login"%}'">Log in</a>
+            </div>
+          </li>
+        </ul> 
+      </div>
+      {%load static%}
+      <a class="navbar-brand lgo" href="{%url 'homepage'%}"><img src="{% static 'logo.png'%}" alt="My image" width="60px"></a>
+      <ul class="navbar-nav ms-auto btns">
+        <li class="nav-items">
+          <div class="signlog-box">
+            <button class="signlog" onclick='location.href="{%url "signup"%}"'>Sign Up</button>
           </div>
-        </div>
-    </nav>
-    <div class="container">
-        <h1>HELLO & WELCOME</h1>
-        <p>Are you ready to explore the <b>first</b> major website I've created?<br>
-        Here you can discover the results of my coding!<br>
-        Dive in now!</p>
+        </li>
+        <li class="nav-items">
+          <div class="signlog-box">
+            <button class="signlog" onclick='location.href="{%url "login"%}"'>Log In</button>
+          </div>
+        </li>
+      </ul>
+      <div class="Hercules"></div>
     </div>
+  </nav>
+  <div class="container">
+    <h1>HELLO & WELCOME</h1>
+    <p>Are you ready to explore the <b>first</b> major website I've created?<br>
+    Here you can discover the results of my coding!<br>
+    Dive in now!</p>
+  </div>
 </body>
 </html>

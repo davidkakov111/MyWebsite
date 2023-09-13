@@ -49,6 +49,8 @@ p {
     border: 1px solid rgba(0, 230, 0, 1);
     box-shadow: none;
     background-color: rgba(0, 160, 0, 1);
+}
+.download:active {
     font-weight: 530;
     font-size: 15px;
 }

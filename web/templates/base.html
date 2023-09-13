@@ -8,72 +8,169 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
   <style>
-    .center-aligned-image {
-      display: block;
-      margin: 0 auto;
-      width: 100%;
+    .navbar {
+      z-index: 100;
     }
-    .box {
-      width: 5%;
-      margin-left: 26%;
+    .navbar-nav {
+      margin-left: -20px;
     }
-    .navbar-brand {
-      padding: 5px;
+    .lgo {
+      position: absolute;
+      left: 47.3%;
+      top: 2px;
+    }
+    .nav-item{
+      border-radius: 80px;
+      position: relative;
+      margin: auto;
     }
     body {
       background-color: gray;
+    }
+    .left-space {
+        margin-left: 0.6%;
+    }
+    .signlog-box {
+      width: 80px;
+      height: 40px;
+      margin: 8px;
+    }
+    .signlog {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border: 1px solid rgba(0, 250, 0, 1);
+      border-radius: 10px;
+      text-align: center;
+      background-color: rgba(0, 200, 0, 0.6);
+      cursor: pointer;
+      box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
+      font-weight: 500;
+    }
+    .signlog:hover {
+      background-color: rgba(0, 160, 0, 0.6);
+      box-shadow: 0px 0px 7px 5px rgba(0, 180, 0, 1);
+      color: rgba(0, 250, 0, 1);
+    }
+    .signlog:active {
+      width: 95%;
+      height: 95%;
+    }
+    #Home {
+      font-size: 20px;
+      margin-top: -3px;
+    }
+    .Hercules {
+      position: relative;
+      height: 50px;
+      width: 0px;
+    }
+    .btns {
+      display: flex;
+      flex-direction: row;
+      top: 1px;
+    }
+    .dropdown-menu {
+      background-color: #333;
+      border: none;
+    }
+    .dropdown-item {
+      color: white;
+    }
+    @media (max-width: 767px) {
+      .lgo {
+        position: absolute;
+        left: 41%;
+      }
+      .btns {
+        position: absolute;
+        right: 2%;
+      }
+    }
+    @media (max-width: 700px) {
+      .lgo {
+        left: 39%;
+      }
+    }
+    @media (max-width: 600px) {
+      .lgo {
+        left: 35%;
+      }
+    }
+    @media (max-width: 470px) {
+      .lgo {
+        left: 29%;
+      }
+    }
+    @media (max-width: 400px) {
+      .lgo {
+        left: 25%;
+      }
+    }
+    @media (max-width: 360px) {
+      .lgo {
+        left: 23%;
+      }
+    }
+    @media (max-width: 330px) {
+      .lgo {
+        display: none;
+      }
     }
     {%block style%}{%endblock style%}
   </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-md navbar-dark mb-4" style="background-color: #333;"> 
-      <div class="container-fluid">
-        <a class="navbar-brand" href="{%url 'homepage'%}">Home</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav me-auto mb-2 mb-md-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{%url "aboutme"%}">About me</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{%url 'game'%}">Game</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="dropdownmenu" role="button" data-bs-toggle="dropdown" aria-expanded="False">
-                More
-              </a>
-              <div class="dropdown-menu" aria-labelledby="dropdownmenu">
-                <a class="dropdown-item" onclick="location.href='{%url "homepage"%}'">Home page</a>
-                <a class="dropdown-item" onclick="location.href='{%url "aboutme"%}'">About me</a>
-                <a class="dropdown-item" onclick="location.href='{%url "game"%}'">Game</a>
-                <a class="dropdown-item" onclick="location.href='{%url "signup"%}'">Sign up</a>
-                <a class="dropdown-item" onclick="location.href='{%url "login"%}'">Log in</a>
-              </div>
-            </li>
-          </ul> 
-          <div class="box">
-            {% load static %}
-            <a href="{%url 'homepage'%}">
-              <img src="{% static 'logo.png'%}" alt="My image" class="center-aligned-image">
+  <nav class="navbar navbar-expand-md navbar-dark mb-4" style="background-color: #333;"> 
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#"></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" id="Home" aria-current="page" href="{%url "homepage"%}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{%url "aboutme"%}">About me</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{%url 'game'%}">Game</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdownmenu" role="button" data-bs-toggle="dropdown" aria-expanded="False">
+              More
             </a>
-          </div>
-          <ul class="navbar-nav me-auto" style="margin-left: 37%;">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{%url "signup"%}">Sign up</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">|</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{%url "login"%}">Log in</a>
-            </li>
-          </ul>
-        </div>
+            <div class="dropdown-menu" aria-labelledby="dropdownmenu">
+              <a class="dropdown-item" onclick="location.href='{%url "homepage"%}'">Home page</a>
+              <a class="dropdown-item" onclick="location.href='{%url "aboutme"%}'">About me</a>
+              <a class="dropdown-item" onclick="location.href='{%url "game"%}'">Game</a>
+              <a class="dropdown-item" onclick="location.href='{%url "signup"%}'">Sign up</a>
+              <a class="dropdown-item" onclick="location.href='{%url "login"%}'">Log in</a>
+            </div>
+          </li>
+        </ul> 
       </div>
-    </nav>
-    {% block content %}{% endblock content %}
+      {%load static%}
+      <a class="navbar-brand lgo" href="{%url 'homepage'%}"><img src="{% static 'logo.png'%}" alt="My image" width="60px"></a>
+      <ul class="navbar-nav ms-auto btns">
+        <li class="nav-item">
+          <div class="signlog-box">
+            <button class="signlog" onclick='location.href="{%url "signup"%}"'>Sign Up</button>
+          </div>
+        </li>
+        <li class="nav-item">
+          <div class="signlog-box">
+            <button class="signlog" onclick='location.href="{%url "login"%}"'>Log In</button>
+          </div>
+        </li>
+      </ul>
+      <div class="Hercules"></div>
+    </div>
+  </nav>
+  {% block content %}{% endblock content %}
 </body>
 </html>

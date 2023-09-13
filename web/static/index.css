@@ -1,43 +1,161 @@
 body {
-    background-image: url('bg.jpg');
-    background-size: cover;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  color: white;
 }
-.navbar-brand{
-    padding: 5px;
-    border-radius: 100px;
+.fullscreen-bg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -100;
 }
-.navbar-brand:hover {
-    background-color: rgba(0, 195, 255, 0.877);
-    border-radius: 100px;
-    box-shadow: 0px 0px 10px 5px rgb(0, 195, 255, 1);
+.fullscreen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
 }
-.nav-item{
+.nai:hover {
+    background-color: rgba(0, 138, 180, 0.877);
+    box-shadow: 0px 0px 10px 5px rgba(0, 138, 180, 1);
     border-radius: 80px;
 }
-.nav-item:hover {
-    background-color: rgba(0, 195, 255, 0.877);
-    box-shadow: 0px 0px 10px 5px rgba(0, 195, 255, 1);
-}
-.navbar .dropdown-menu {
-    background-color: rgba(0, 0, 0, 0);
+.dropdown-menu {
+    background: linear-gradient(to bottom right, rgb(1, 2, 31), rgb(0, 0, 43), rgb(0, 0, 78), rgb(0, 0, 112));
     border: none;
-}
-.navbar .dropdown-item {
-    background-color: rgba(0, 0, 0, 0);
-    color: #ffffff;
-}
-.navbar .dropdown-item:hover {
-    box-shadow: 0px 0px 10px 5px rgba(0, 195, 255, 1);
-    background-color: rgba(0, 195, 255, 0.877);
     border-radius: 10px;
+    color: white;
 }
-.center-aligned-image {
-    display: block;
-    margin: 0 auto;
-    margin-left: 26%;
+.dropdown-item:hover {
+    background: linear-gradient(to top left, rgb(3, 5, 85), rgb(2, 2, 143), rgb(0, 0, 201), rgb(0, 0, 255));
+    border-radius: 10px;
+    color: white;
 }
 .container {
     text-align: center;
-    margin-top: 7%;
     color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -70%);
+    font-size: large;
+}
+.navbar {
+    z-index: 100;
+}
+.navbar-nav {
+  margin-left: -20px;
+}
+.lgo {
+  position: absolute;
+  left: 47.3%;
+  top: 2px;
+}
+.nav-item{
+  border-radius: 80px;
+  position: relative;
+  margin: auto;
+}
+body {
+  background-color: rgba(0, 0, 0, 0);
+}
+.left-space {
+    margin-left: 0.6%;
+}
+.signlog-box {
+  width: 80px;
+  height: 40px;
+  margin: 8px;
+}
+.signlog {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(0, 220, 250, 1);
+  border-radius: 10px;
+  text-align: center;
+  background-color: rgba(1, 123, 199, 0.5);
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  font-weight: 500;
+}
+.signlog:hover {
+  background-color: rgba(1, 123, 199, 1);
+  box-shadow: 0px 0px 7px 5px rgba(0, 127, 204, 1);
+  color: rgba(0, 220, 250, 1);
+}
+.signlog:active {
+  width: 95%;
+  height: 95%;
+}
+#Home {
+  font-size: 20px;
+  margin-top: -3px;
+}
+.Hercules {
+  position: relative;
+  height: 50px;
+  width: 0px;
+}
+.btns {
+  display: flex;
+  flex-direction: row;
+  top: 1px;
+}
+.dropdown-menu {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+}
+.dropdown-item {
+  color: white;
+}
+@media (max-width: 767px) {
+  .lgo {
+    position: absolute;
+    left: 41%;
+  }
+  .btns {
+    position: absolute;
+    right: 2%;
+  }
+}
+@media (max-width: 700px) {
+  .lgo {
+    left: 39%;
+  }
+}
+@media (max-width: 600px) {
+  .lgo {
+    left: 35%;
+  }
+}
+@media (max-width: 470px) {
+  .lgo {
+    left: 29%;
+  }
+}
+@media (max-width: 400px) {
+  .lgo {
+    left: 25%;
+  }
+  .container {
+    transform: translate(-50%, -60%);
+  }
+}
+@media (max-width: 360px) {
+  .lgo {
+    left: 23%;
+  }
+}
+@media (max-width: 330px) {
+  .lgo {
+    display: none;
+  }
 }
