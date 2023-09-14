@@ -1,11 +1,11 @@
 .island {
-    position: absolute;
-    bottom: 14%;
-    left: 37%;
-    right: 37%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 10%);
     text-align: center;
-    max-width: 25%;
-    max-height: 67%;
+    max-width: 300px;
+    max-height: 840px;
     background-color: rgba(255, 255, 0, 0.5);
     padding: 2%;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
@@ -22,6 +22,33 @@
     display: block;
     margin: 0 auto;
 }
-input {
+#email {
     background-color: rgba(205, 205, 140);
+}
+#password {
+    background-color: rgba(205, 205, 140);
+}
+#pasword {
+    background-color: rgba(205, 205, 140);
+}
+@media (max-width: 767px) {
+    .island {
+        padding-top: 4%;
+    }
+}
+@media (max-width: 400px) {
+    .island {
+        padding-top: 6%;
+    }
+}
+@media (max-width: 350px) {
+    .island {
+        max-width: 250px;
+    }
+}
+@media (max-width: 300px) {
+    .island {
+        padding-top: 8%;
+        max-width: 220px;
+    }
 }

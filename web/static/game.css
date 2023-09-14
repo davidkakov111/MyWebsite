@@ -3,31 +3,39 @@
     overflow: auto;
     white-space: nowrap;
 }
+.cursive {
+    font-family: cursive;
+    cursor: default;
+}
 .image-container img {
-    max-width: 50%;
+    max-width: 60%;
     height: auto;
     margin-right: 5px;
     margin-left: 5px
 }
 h1 {
-text-align: center;
+    text-align: center;
+    font-family: cursive;
+    padding-bottom: 3%;
+    cursor: default;
 }
 .island {
     position: absolute;
-    left: 13%;
-    right: 13%;
-    max-width: 100%;
-    top: 14%;
-    background-color: rgba(255, 255, 0, 0.5);
-    padding: 2%;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
     bottom: auto;
-}
-.space {
-    text-indent: 25px;
+    height: auto;
+    padding-top: 4%;
+    padding: 2%;
+    width: 74%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 0, 0.5);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
 }
 p {
-    font-size: 18px;
+    font-size: 20px;
+    font-family: cursive;
+    text-indent: 25px;
+    cursor: default;
 }
 .download {
     position: absolute;
@@ -57,4 +65,47 @@ p {
 .btton {
     position: relative;
     margin-bottom: 50px;
+}
+@media (max-width: 900px) {
+    .btton {
+        right: 3%;
+    }
+}
+@media (max-width: 767px) {
+    .island {
+        width: 85%;
+    }
+    .btton {
+        right: 6%;
+    }
+}
+@media (max-width: 500px) {
+    p {
+        font-size: 18px;
+    }
+    .image-container img {
+        max-width: 80%;
+    }
+    .btton {
+        right: 9%;
+    }
+}
+@media (max-width: 400px) {
+    p {
+        font-size: 15px;
+    }
+    .island {
+        width: 92%;
+    }
+    .btton {
+        right: 12%;
+    }
+}
+@media (max-width: 300px) {
+    .island {
+        width: 95%;
+    }
+    .btton {
+        right: 15%;
+    }
 }

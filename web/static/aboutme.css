@@ -1,42 +1,84 @@
 .island {
     position: absolute;
-    left: 15%;
-    right: 15%;
-    max-width: 100%;
-    top: 14%;
-    background-color: rgba(255, 255, 0, 0.5);
-    padding: 2%;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
     bottom: auto;
-}
-.text {
-    position: absolute;
-    top: 48%;
-    left: 55%;
-    transform: translate(-30%, -80%);
-    background-color: rgba(255, 255, 255, 0);
-    padding: 10px;
+    height: auto;
+    padding-top: 4%;
+    padding: 2%;
+    width: 74%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 0, 0.5);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
 }
 p {
-    font-size: 18px;
+    font-size: 20px;
+    font-family: cursive;
+    text-indent: 25px;
+    cursor: default;
 }
 h1 {
+    padding-bottom: 3%;
     text-align: center;
-}
-.space {
-    text-indent: 25px;
+    font-family: cursive;
+    cursor: default;
 }
 .img_me {
     position: relative;
-    top: 18%;
+    float: left;
+    width: 39%;
+    margin: 2%;
+    margin-bottom: 1%;
 }
-.click_img {
-    display: block;
-    margin-left: 52%;
+.container {
     position: relative;
-    top: -80px;
+    height: 120px;
+    width: 150px;
 }
 .box1 {
-    width: 110px;
-    margin-left: 44%;
+    position: absolute;
+    width: 120px;
+    z-index: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.click_img {
+    position: absolute;
+    bottom: 27%;
+    width: 65px;
+    left: 50%;
+    z-index: 1;
+    transform: translateX(22%);
+}
+@media (max-width: 767px) {
+    .island {
+        width: 85%;
+    }
+}
+@media (max-width: 650px) {
+    p {
+        font-size: 18px;
+        text-indent: 15px;
+    }
+}
+@media (max-width: 500px) {
+    p {
+        font-size: 15px;
+    }
+    .img_me {
+        width: 50%;
+    }
+}
+@media (max-width: 400px) {
+    p {
+        font-size: 13px;
+        text-indent: 10px;
+    }
+    .img_me {
+        width: 80%;
+        float: none;
+        margin: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        padding-bottom: 3%;
+    }
 }

@@ -37,6 +37,7 @@ body {
     background: linear-gradient(to top left, rgb(3, 5, 85), rgb(2, 2, 143), rgb(0, 0, 201), rgb(0, 0, 255));
     border-radius: 10px;
     color: white;
+    cursor: pointer;
 }
 .container {
     text-align: center;
@@ -46,6 +47,7 @@ body {
     left: 50%;
     transform: translate(-50%, -70%);
     font-size: large;
+    cursor: default;
 }
 .navbar {
     z-index: 100;
