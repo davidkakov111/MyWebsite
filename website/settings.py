@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-e53jog2g!d+d!ql&(avahr#(dxu+*09rerd4mqoeh4m5%xs3!x
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['kovacsdavid.lovestoblog.com', '127.0.0.1']
+ALLOWED_HOSTS = ['.vercel.app']
 
 
 # Application definition
@@ -77,11 +77,14 @@ WSGI_APPLICATION = 'website.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'verceldb',
+        'USER': 'default',
+        'PASSWORD': 'VfMnaTRB5Lg2',
+        'HOST': 'ep-broken-disk-55251045-pooler.us-east-1.postgres.vercel-storage.com',
+        'PORT': '5432',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators

@@ -1,6 +1,7 @@
 from django.shortcuts import render
 import hashlib
 import sqlite3
+import psycopg2
 
 def homepage(request):
     return render(request, 'index.html')
@@ -27,16 +28,22 @@ def signup(request):
             hashed_text = sha256_hash.hexdigest()
             return hashed_text
         pasword = hashing(password)
-        con = sqlite3.connect("db.sqlite3")
+        con = psycopg2.connect(
+        database="verceldb",
+        user="default",
+        password="VfMnaTRB5Lg2",
+        host="ep-broken-disk-55251045-pooler.us-east-1.postgres.vercel-storage.com",
+        port="5432"
+        )
         curs = con.cursor()
         curs.execute("CREATE TABLE IF NOT EXISTS users (email TEXT, password Text)")
-        curs.execute("SELECT * FROM users WHERE email = ?", (email,))
+        curs.execute("SELECT * FROM users WHERE email = %s", (email,))
         existing_user = curs.fetchone()
         if existing_user:
             con.close()
             return render(request, "existingaccount.html")
         else:
-            curs.execute("INSERT INTO users VALUES (?, ?)", (email, pasword))
+            curs.execute("INSERT INTO users VALUES (%s, %s)", (email, pasword))
             curs.execute("SELECT * FROM users")
             curs.fetchall()
             con.commit()
@@ -55,7 +62,13 @@ def login(request):
             hashed_text = sha256_hash.hexdigest()
             return hashed_text
         pasword = hasheles(password)
-        con = sqlite3.connect("db.sqlite3")
+        con = psycopg2.connect(
+        database="verceldb",
+        user="default",
+        password="VfMnaTRB5Lg2",
+        host="ep-broken-disk-55251045-pooler.us-east-1.postgres.vercel-storage.com",
+        port="5432"
+        )
         curs = con.cursor()
         curs.execute("CREATE TABLE IF NOT EXISTS users (email TEXT, password Text)")
         curs.execute("SELECT * FROM users")
