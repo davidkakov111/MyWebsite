@@ -51,6 +51,7 @@ body {
 }
 .navbar {
     z-index: 100;
+    background-color: rgba(0, 0, 0, 0);
 }
 .navbar-nav {
   margin-left: -20px;
@@ -159,5 +160,20 @@ body {
 @media (max-width: 330px) {
   .lgo {
     display: none;
+  }
+}
+@media (max-height: 645px) {
+  .navbar {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+}
+@media (max-height: 370px) {
+  .container {
+    transform: translate(-50%, -50%);
+  }
+}
+@media (max-height: 300px) {
+  .container {
+    transform: translate(-50%, -30%);
   }
 }
