@@ -26,7 +26,7 @@ urlpatterns = [
     path('game/', views.game, name='game'),
     path('aboutme/', views.aboutme, name="aboutme"),
     path('signup/', views.signup, name="signup"),
-    path('login/', views.login, name="login")
+    path('login/', views.Login, name="login")
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
