@@ -65,11 +65,7 @@ p {
 .btton {
     position: relative;
     margin-bottom: 50px;
-}
-@media (max-width: 900px) {
-    .btton {
-        right: 3%;
-    }
+    right: 3%;
 }
 @media (max-width: 767px) {
     .island {

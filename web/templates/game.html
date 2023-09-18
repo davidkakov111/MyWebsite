@@ -41,8 +41,16 @@
     <br>
     <p>Are you up for the challenge? By clicking the button below, you can download and dive headfirst into the adventure. <b>Download it now!</b></p>
     <br>
-    <div class="btton">
-        <button class="download" onclick='location.href="https://drive.google.com/drive/folders/1xOY1ccBexdsiACC4xmgnKYBReN-Oozu_?usp=sharing"'>Download</button>
-    </div>
+    {% if user.is_authenticated %}
+        <div class="btton">
+            <button class="download" onclick='location.href="https://drive.google.com/drive/folders/1xOY1ccBexdsiACC4xmgnKYBReN-Oozu_?usp=sharing"'>Download</button>
+        </div>
+    {% endif %}
+    {% if not user.is_authenticated %}
+        <div class="btton">
+            <button class="download" onclick='location.href="{%url "login"%}"'>Log in to<br>Download</button>
+        </div>
+        <br>
+    {% endif %}
 </div>
 {%endblock content%}

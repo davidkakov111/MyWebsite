@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate, login
-import hashlib
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
+
 
 def homepage(request):
     return render(request, 'index.html')
@@ -26,10 +27,11 @@ def signup(request):
                 return render(request, "invalidpassword.html")
             user = User.objects.create_user(username=email, email=email, password=password)
             user.save()
+            login(request, user)
             return render(request, "successfulsignup.html")
         except:
             return render(request, 'index.html')
-        
+
 def Login(request):
     if request.method == "GET":
         return render(request, "login.html")
@@ -45,3 +47,7 @@ def Login(request):
                 return render(request, "unsuccessfullogin.html")
         except:
             return render(request, 'index.html')
+
+def Logout(request):
+    logout(request)
+    return render(request, 'index.html')
