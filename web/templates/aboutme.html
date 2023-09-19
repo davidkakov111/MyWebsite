@@ -17,10 +17,10 @@
     <p> I have always been interested in programming and new technologies. I created this page to authentically showcase my current programming skills and knowledge. Among programming languages, I am most proficient in Python, at an intermediate level of proficiency. I will also present a game on the website that I have created. While it's true that when I created this game, my programming knowledge was approximately 25% less than what it is now, but I still believe it's worth showcasing this <a href="{%url 'game'%}">game</a>.</p>
     <p> Currently, I am actively learning HTML website development, leveraging my Python knowledge with the Django framework, and meticulously designing user interfaces with CSS. I am open to exploring new technologies and languages as necessary to meet the demands of the dynamic and ever-changing field of software development. I passed the high school graduation exam, but I don't have a formal programming degree. Nevertheless, I do possess a certain level of programming knowledge and skills, and I am committed to further enhancing them for more efficient work. Let's dive into my GitHub world!</p>
     {% if user.is_authenticated %}
-        <p>Contact me at: kovacsdavid648@gmail.com</p>
+        <p>Contact me <a href="{%url 'contact'%}">here</a>!</p>
     {%endif%}
     {% if not user.is_authenticated %}
-        <p>Contact me at: <a href="{%url 'login'%}">Log in for contact info.</a></p>
+        <p>Contact me <a href="{%url 'login'%}">here</a>, but log in first!</p>
     {%endif%}
     <br>
     <div class="container">

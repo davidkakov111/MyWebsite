@@ -20,10 +20,11 @@ h1 {
     cursor: default;
 }
 .island {
-    position: absolute;
+    position: relative;
     bottom: auto;
     height: auto;
     padding-top: 4%;
+    margin-bottom: 2%;
     padding: 2%;
     width: 74%;
     left: 50%;
@@ -50,7 +51,8 @@ p {
     cursor: pointer;
     box-shadow: 5px 4px 4px rgba(0, 0, 0, 0.4);
     font-weight: 600;
-    left: 44%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 .download:hover {
     color: rgba(200, 200, 200, 1);
@@ -65,25 +67,18 @@ p {
 .btton {
     position: relative;
     margin-bottom: 50px;
-    right: 3%;
 }
 @media (max-width: 767px) {
     .island {
         width: 85%;
     }
-    .btton {
-        right: 6%;
-    }
-}
+} 
 @media (max-width: 500px) {
     p {
         font-size: 18px;
     }
     .image-container img {
         max-width: 80%;
-    }
-    .btton {
-        right: 9%;
     }
 }
 @media (max-width: 400px) {
@@ -93,15 +88,9 @@ p {
     .island {
         width: 92%;
     }
-    .btton {
-        right: 12%;
-    }
 }
 @media (max-width: 300px) {
     .island {
         width: 95%;
-    }
-    .btton {
-        right: 15%;
     }
 }

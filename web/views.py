@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from .forms import ContactForm
+from django.core.mail import EmailMessage
 
 
 def homepage(request):
@@ -51,3 +53,40 @@ def Login(request):
 def Logout(request):
     logout(request)
     return render(request, 'index.html')
+
+def contact(request):
+    form = ContactForm()
+    if request.method == "POST":
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            theme = form.cleaned_data['themes']
+            message = form.cleaned_data['message']
+            contents1 = [
+                "Name:", name, "Message:", message
+            ]
+            message_body1 = "\n".join(contents1)
+            email_to_send1 = EmailMessage(
+                subject = theme,
+                body = message_body1,
+                from_email= email, 
+                to = ['kovacsdavid648@gmail.com'],
+                reply_to= [email],
+            )
+            email_to_send1.send()
+            contents2 = [
+                f'Dear {name},', 'I have received your message, and I will respond shortly from the email address kovacsdavid648@gmail.com. Thank you in advance for your patience and understanding!', 'Best regards,', 'Kovács Dávid'
+            ]
+            message_body2 = "\n".join(contents2)
+            email_to_send2 = EmailMessage(
+                subject = "Auto-reply",
+                body =   message_body2,
+                from_email= 'kovacsdavid648@gmail.com', 
+                to = [email],
+                reply_to= ['kovacsdavid648@gmail.com'],
+            )
+            email_to_send2.send()
+            return render(request, 'contact_response.html', {"name":name})
+    return render(request, "contact.html", {'form':form})
+
