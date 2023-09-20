@@ -50,8 +50,8 @@
     <script>
         function downloadGame() {
             var link = document.createElement('a');
-            link.href = "{% static 'ANIMAL_INVASION.zip' %}";
-            link.download = "ANIMAL_INVASION.zip";
+            link.href = 'https://github.com/davidkakov111/zip/raw/main/ANIMAL_INVASION.zip';
+            link.download = 'ANIMAL_INVASION.zip';
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
