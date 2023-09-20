@@ -13,37 +13,53 @@
     This game turned out to be quite large, but I believe it was worth the invested energy because it has become a very enjoyable game!
     In this game you are the main character, a businessman, who tries to collect bitcoins throughout the challenges of the game, guarded by animals and other dangerous creatures.
     These entities inflict damage upon contact, so it's better to avoid them to prevent any fatal consequences. But don't forget to collect the bitcoins that these entities guard, because if you successfully gather all 20 bitcoins, I'll reward you with a heartfelt thank you! 
-    Below, you'll find images of the game and instructions for downloading. I wish you a pleasant gaming experience! </p>
+    Below, you'll find images of the game and instructions for launching. I wish you a pleasant gaming experience! </p>
     <br>
+    {%load static%}
     <div class="image-container">
         <img src="{% static 'game1.jpg' %}" alt="Game 1">
         <img src="{% static 'game2.jpg' %}" alt="Game 2">
         <img src="{% static 'game3.jpg' %}" alt="Game 3">
     </div>
     <br>
+    <p class="cursive">It's possible that your computer might hesitate to open 
+        the file due to potential risks associated with .exe files. 
+        I've checked my game using VirusTotal, which scanned it with 
+        63 antivirus engines. The final result was that more than 85% 
+        of the antivirus engines considered the game safe, while the 
+        remaining ones flagged it as risky or potentially containing 
+        a virus. This is because the game has a .exe extension, which is 
+        often considered risky by these antivirus engines. However, you 
+        can view the results of the virus scan by <a href="https://www.virustotal.com/gui/file/3410b0575dbd261af7180c6aae27fb2e4765a5110a3fa57aa90358cb5a4f74aa">clicking here</a>.
+        The game is open-source, so you can also inspect and download the game's code 
+        by <a href="https://github.com/davidkakov111/My_Game.git">clicking here</a>. So, there's no reason to worry. </p>
     <details>
-        <summary style="cursor: pointer;" class="cursive">Click here for the guide for <b>downloading</b> and <b>launching</b> the Game!</summary>
+        <summary style="cursor: pointer;" class="cursive">Please click here for the guide on how to <b>launch</b> the Game!</summary>
         <ol>
-            <li class="cursive">Click on the button labeled 'Download'.</li>
-            <li class="cursive"><abbr title="Click on the three buttons located on the right side of the file, and within that, click on 'Download'.">Download</abbr> the 'ANIMAL_INVASION' file.</li>
-            <li class="cursive">After the download is complete, <abbr title="Right-click on the folder, then click on the option 'Extract All' button. After that, choose the destination folder where you want to extract the files.">extract the files</abbr>.</li>
-            <li class="cursive">Afterward, open the <abbr title="The folder name is ANIMAL_INVASION-..."> extracted folder</abbr>.</li>
-            <li class="cursive">Also open the next <abbr title="The folder name is ANIMAL_INVASION"> folder</abbr>.</li>
+            <li class="cursive">After the download is complete, <abbr title="Right-click on the folder, then click on the option 'Extract All' button. After that, choose the destination where you want to extract the files.">extract the files</abbr>.</li>
+            <li class="cursive">Afterward, open the <abbr title="The folder name is ANIMAL_INVASION"> extracted folder</abbr>.</li>
             <li class="cursive">Open the folder named 'dist'.</li>
             <li class="cursive">Open the next <abbr title="The folder name is ANIMAL_INVASION"> folder </abbr> as well.</li>
             <li class="cursive">To start the game, open the ANIMAL_INVASION.exe file.</li>
-            <li class="cursive">It's possible that your computer might hesitate to open <br>
-                the file due to potential risks associated with .exe files. <br> 
-                However, you can confidently proceed to open it as this is just a game.</li>
             <li class="cursive">I wish you the best of luck with your gameplay!</li>
         </ol>
     </details>
     <br>
     <p>Are you up for the challenge? By clicking the button below, you can download and dive headfirst into the adventure. <b>Download it now!</b></p>
     <br>
+    <script>
+        function downloadGame() {
+            var link = document.createElement('a');
+            link.href = "{% static 'ANIMAL_INVASION.zip' %}";
+            link.download = "ANIMAL_INVASION.zip";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
     {% if user.is_authenticated %}
         <div class="btton">
-            <button class="download" onclick='location.href="https://drive.google.com/drive/folders/1xOY1ccBexdsiACC4xmgnKYBReN-Oozu_?usp=sharing"'>Download</button>
+            <button class="download" onclick="downloadGame()">Download</button>
         </div>
     {% endif %}
     {% if not user.is_authenticated %}
