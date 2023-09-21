@@ -1,9 +1,3 @@
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  color: white;
-}
 .fullscreen-bg {
   position: fixed;
   top: 0;
@@ -39,16 +33,11 @@ body {
     color: white;
     cursor: pointer;
 }
-.container {
-    text-align: center;
-    color: white;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -70%);
-    font-size: large;
-    cursor: default;
-}
+.logout {
+   position: relative;
+    width: 35px;
+    height: 35px;
+} 
 .navbar {
     z-index: 100;
     background-color: rgba(0, 0, 0, 0);
@@ -71,42 +60,10 @@ body {
   position: relative;
   margin: auto;
 }
-body {
-  background-color: rgba(0, 0, 0, 0);
-}
-.left-space {
-    margin-left: 0.6%;
-}
 .signlog-box {
   width: 80px;
   height: 35px;
   margin: 8px;
-}
-.logout-box {
-  width: 100px;
-  height: 35px;
-  margin: 8px;
-}
-.logout {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  border: 1px solid rgba(250, 0, 0, 1);
-  border-radius: 10px;
-  text-align: center;
-  background-color: rgba(200, 0, 0, 0.6);
-  cursor: pointer;
-  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
-  font-weight: 500;
-}
-.logout:hover {
-  background-color: rgba(160, 0, 0, 0.6);
-  box-shadow: 0px 0px 7px 5px rgba(180, 0, 0, 1);
-  color: rgba(250, 0, 0, 1);
-}
-.logout:active {
-  width: 95%;
-  height: 95%;
 }
 .signlog {
   position: relative;
@@ -115,7 +72,7 @@ body {
   border: 1px solid rgba(0, 220, 250, 1);
   border-radius: 10px;
   text-align: center;
-  background-color: rgba(1, 123, 199, 0.5);
+  background-color: rgba(1, 123, 199, 0.8);
   box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
   cursor: pointer;
   font-weight: 500;
@@ -128,6 +85,14 @@ body {
 .signlog:active {
   width: 95%;
   height: 95%;
+}
+#imgg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+#imgg:active {
+  width: 95%;
 }
 #Home {
   font-size: 20px;
@@ -150,25 +115,32 @@ body {
 .dropdown-item {
   color: white;
 }
+@media (min-width: 767px) {
+  .light:hover {
+    background-color: rgba(0, 138, 180, 0.877);
+    box-shadow: 0px 0px 10px 5px rgba(0, 138, 180, 1);
+    border-radius: 80px;
+  }
+}
 @media (max-width: 767px) {
   .lgo {
     position: absolute;
     left: 41%;
   }
   .lgo2 {
-    left: 43%;
+    left: 45%;
   }
   .btns {
     position: absolute;
     right: 2%;
   }
+  .logout {
+    margin-top: 9%;
+  }
 }
 @media (max-width: 700px) {
   .lgo {
     left: 39%;
-  }
-  .lgo2 {
-    left: 41%;
   }
 }
 @media (max-width: 600px) {
@@ -176,7 +148,7 @@ body {
     left: 35%;
   }
   .lgo2 {
-    left: 39%;
+    left: 43%;
   }
 }
 @media (max-width: 470px) {
@@ -184,7 +156,7 @@ body {
     left: 29%;
   }
   .lgo2 {
-    left: 37%;
+    left: 41%;
   }
 }
 @media (max-width: 400px) {
@@ -200,7 +172,7 @@ body {
     left: 23%;
   }
   .lgo2 {
-    left: 34%;
+    left: 39%;
   }
 }
 @media (max-width: 330px) {
@@ -208,7 +180,7 @@ body {
     display: none;
   }
   .lgo2 {
-    left: 32%;
+    left: 38%;
   }
 }
 @media (max-height: 645px) {
