@@ -9,14 +9,13 @@
     left: 50%;
     transform: translateX(-50%);
     background-color: rgb(179, 176, 13);
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0);
 }
 p {
     text-align: center;
     font-size: large;
     font-weight: 600;
     font-family: Verdana;
-    transform: perspective(100px) rotateX(-5deg);
 }
 .center {
     position: absolute;
