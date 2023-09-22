@@ -16,6 +16,7 @@ p {
     font-size: large;
     font-weight: 600;
     font-family: Verdana;
+    cursor: default;
 }
 .center {
     position: absolute;

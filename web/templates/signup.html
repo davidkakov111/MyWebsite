@@ -18,9 +18,26 @@ Sign up
             <label for="password">Set password</label>
             <input type="password" placeholder="Enter password" id="password" name="password" required><br>
             <label for="pasword">Confirm password</label>
-            <input type="password" placeholder="Password again" id="pasword" name="pasword" required><br>
+            <input type="password" placeholder="Password again" id="pasword" name="pasword" required>
             <input class="btn btn-success mb-4 mt-4" type="submit" id = "submit" name="submit" value="Sign up →">
         </form>
+    </div>
+    <div class="boxx">
+        <div class="hrleft">
+            <hr>
+        </div>
+        <div class="or">
+            <p>Or Sign UP Using</p>
+        </div>
+        <div class="hrright">
+            <hr>
+        </div>
+    </div>
+    <div class="containergitlog">
+        <a href="{% url 'social:begin' 'github' %}"><img class="gitlog" src="{% static 'Github.png'%}" alt="Log in with GitHUb!"></a>
+    </div>
+    <div class="containergooglelog">
+        <a href="#"><img class="googlelog" src="{% static 'googlelogo.png'%}" alt="Log in with Google!"></a>
     </div>
 </div>
 {%endblock content%}

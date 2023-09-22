@@ -5,12 +5,18 @@
     transform: translate(-50%, 8%);
     text-align: center;
     max-width: 300px;
-    max-height: 840px;
+    max-height: 520px;
     margin-bottom: 5%;
     background-color: rgb(179, 176, 13);
     padding: 2%;
     padding-bottom: 1%;
     box-shadow: 0px 0px 20px rgba(0, 0, 0);
+}
+h1 {
+    cursor: default;
+}
+p {
+    cursor: default;
 }
 .content {
     text-align: center;
@@ -23,6 +29,52 @@
 .content input {
     display: block;
     margin: 0 auto;
+}
+.boxx {
+    position: relative;
+    height: 30px;
+}
+.hrleft {
+    position: absolute;
+    width: 23%;
+    left: 0%;
+}
+.or {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: 10%;
+}
+.hrright {
+    position: absolute;
+    width: 23%;
+    right: 0%;
+}
+.containergitlog {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+    left: -85px;
+}
+.gitlog {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: -15%;
+}
+.containergooglelog {
+    position: relative;
+    width: 57px;
+    height: 57px;
+    margin: 0 auto;
+    right: -25px;
+}
+.googlelog {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 85%;
 }
 #email {
     background-color: rgba(205, 205, 140);
@@ -46,6 +98,10 @@
 @media (max-width: 350px) {
     .island {
         max-width: 250px;
+    }
+    .or {
+        font-size: smaller;
+        top: 16%;
     }
 }
 @media (max-width: 300px) {

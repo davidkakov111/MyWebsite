@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'web',
     'crispy_forms',
     'crispy_bootstrap5',
+    'social_django',
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
@@ -54,6 +55,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
@@ -71,6 +73,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',
             ],
         },
     },
@@ -146,3 +149,18 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'kovacsdavid648@gmail.com'
 EMAIL_HOST_PASSWORD = 'knnxztxrndxajhrc'
+
+
+# Social app custom settings
+AUTHENTICATION_BACKENDS = [
+    'social_core.backends.github.GithubOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+]
+
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'homepage'
+LOGOUT_URL = 'logout'
+LOGOUT_REDIRECT_URL = 'homepage'
+
+SOCIAL_AUTH_GITHUB_KEY = 'eb4ea2d458e6fa3d876b'
+SOCIAL_AUTH_GITHUB_SECRET = 'c004764b9d99948a18a7ff6344b0f0c86eb45e30'

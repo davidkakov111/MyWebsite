@@ -4,7 +4,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from .forms import ContactForm
 from django.core.mail import EmailMessage
-
+from django.contrib.auth import views as auth_views
 
 def homepage(request):
     return render(request, 'index.html')
@@ -30,7 +30,7 @@ def signup(request):
             user = User.objects.create_user(username=email, email=email, password=password)
             user.save()
             login(request, user)
-            return render(request, "successfulsignup.html")
+            return render(request, "index.html")
         except:
             return render(request, 'index.html')
 
@@ -44,7 +44,7 @@ def Login(request):
             user = authenticate(request, username=username, password=password)
             if user is not None:
                 login(request, user)
-                return render(request, 'successfullogin.html')
+                return render(request, 'index.html')
             else:
                 return render(request, "unsuccessfullogin.html")
         except:
@@ -52,8 +52,9 @@ def Login(request):
 
 def Logout(request):
     logout(request)
+    auth_views.LogoutView.as_view()
     return render(request, 'index.html')
-
+    
 def contact(request):
     form = ContactForm()
     if request.method == "POST":
