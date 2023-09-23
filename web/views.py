@@ -19,8 +19,8 @@ def signup(request):
     if request.method == "GET":
         return render(request, "signup.html")
     elif request.method == "POST":
-        email = request.POST.get("email")
         try:
+            email = request.POST.get("email")
             if User.objects.filter(email=email).exists():
                 return render(request, "existingaccount.html")
             password = request.POST.get("password")
@@ -29,7 +29,8 @@ def signup(request):
                 return render(request, "invalidpassword.html")
             user = User.objects.create_user(username=email, email=email, password=password)
             user.save()
-            login(request, user)
+            Users = authenticate(request, username=email, password=password)
+            login(request, Users)
             return render(request, "index.html")
         except:
             return render(request, 'index.html')
