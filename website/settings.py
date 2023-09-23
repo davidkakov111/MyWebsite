@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'social_django',
 ]
 
+#Crispy
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
 
@@ -62,6 +63,7 @@ MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
 
 ROOT_URLCONF = 'website.urls'
 
+#Templates
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

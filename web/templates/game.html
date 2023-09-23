@@ -7,7 +7,9 @@
 <link rel="stylesheet" type="text/css" href="{% static 'game.css' %}">
 {%endblock head%}
 {%block content%}
+{% comment %} Yellow island. {% endcomment %}
 <div class="island">
+    {% comment %} Text. {% endcomment %}
     <h1>Animal invasion!</h1>
     <p>This is the first larger-scale 2D game that I've created, written in <a href="https://www.python.org/">Python</a> programing language, using the <a href="https://api.arcade.academy/en/latest/">Arcade</a> game developer module (<a href="https://github.com/davidkakov111/My_Game.git">Check it out on github</a>). 
     This game turned out to be quite large, but I believe it was worth the invested energy because it has become a very enjoyable game!
@@ -15,13 +17,16 @@
     These entities inflict damage upon contact, so it's better to avoid them to prevent any fatal consequences. But don't forget to collect the bitcoins that these entities guard, because if you successfully gather all 20 bitcoins, I'll reward you with a heartfelt thank you! 
     Below, you'll find images of the game and instructions for launching. I wish you a pleasant gaming experience! </p>
     <br>
+    {% comment %} Horizontal overflow container. {% endcomment %}
     {%load static%}
     <div class="image-container">
+        {% comment %} Images. {% endcomment %}
         <img src="{% static 'game1.jpg' %}" alt="Game 1">
         <img src="{% static 'game2.jpg' %}" alt="Game 2">
         <img src="{% static 'game3.jpg' %}" alt="Game 3">
     </div>
     <br>
+    {% comment %} Text. {% endcomment %}
     <p>It's possible that your computer might hesitate to open 
         the file due to potential risks associated with .exe files. 
         I've checked my game using VirusTotal, which scanned it with 
@@ -33,9 +38,12 @@
         can view the results of the virus scan by <a href="https://www.virustotal.com/gui/file/3410b0575dbd261af7180c6aae27fb2e4765a5110a3fa57aa90358cb5a4f74aa">clicking here</a>.
         The game is open-source, so you can also inspect and download the game's code 
         by <a href="https://github.com/davidkakov111/My_Game.git">clicking here</a>. So, there's no reason to worry. </p>
+    {% comment %} Dropdown text. {% endcomment %}
     <details>
+        {% comment %} "Button text". {% endcomment %}
         <summary class="fs" style="cursor: pointer;">Please click here for the guide on how to <b>launch</b> the Game!</summary>
         <ol>
+            {% comment %} Dropdown content. {% endcomment %}
             <li class="fs">After the download is complete, <abbr title="Right-click on the folder, then click on the option 'Extract All' button. After that, choose the destination where you want to extract the files.">extract the files</abbr>.</li>
             <li class="fs">Afterward, open the <abbr title="The folder name is ANIMAL_INVASION"> extracted folder</abbr>.</li>
             <li class="fs">Open the folder named 'dist'.</li>
@@ -45,8 +53,10 @@
         </ol>
     </details>
     <br>
+    {% comment %} Text. {% endcomment %}
     <p>Are you up for the challenge? By clicking the button below, you can download and dive headfirst into the adventure. <b>Download it now!</b></p>
     <br>
+    {% comment %} Script for download from GitHub. {% endcomment %}
     <script>
         function downloadGame() {
             var link = document.createElement('a');
@@ -57,11 +67,13 @@
             document.body.removeChild(link);
         }
     </script>
+    {% comment %} Download button for authenticated users. {% endcomment %}
     {% if user.is_authenticated %}
         <div class="btton">
             <button class="download" onclick="downloadGame()">Download</button>
         </div>
     {% endif %}
+    {% comment %} Download button for unauthenticated users. {% endcomment %}
     {% if not user.is_authenticated %}
         <div class="btton">
             <button class="download" onclick='location.href="{%url "login"%}"'>Log in to<br>Download</button>

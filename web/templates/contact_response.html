@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
+    {% comment %} CSS {% endcomment %}
     <style>
         h4 {
             text-align: center;
@@ -38,9 +39,11 @@
     </style>
 </head>
 <body>
+    {% comment %} Text {% endcomment %}
     <h4>Dear {{name}}, please check your inbox for messages, and if not found, check your spam folder.</h4>
     <p>Back to <a href="{%url 'homepage'%}">homepage</a>!</p>
     {%load static%}
+    {% comment %} PNG file. {% endcomment %}
     <div>
         <img id="e" src="{% static 'email.png' %}" alt="Email">
     </div>

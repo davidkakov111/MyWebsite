@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unsuccessful log in</title>
+    <title>Unsuccessful Log In</title>
+    {% comment %} CSS {% endcomment %}
     <style>
         h1 {
             text-align: center;
@@ -25,8 +26,10 @@
     </style>
 </head>
 <body>
+    {% comment %} Text. {% endcomment %}
     <h1>Incorrect login credentials! Try <a href="{%url 'login'%}"> again</a>!</h1>
     {%load static%}
+    {% comment %} Image. {% endcomment %}
     <div>
         <img src="{%static 'stop.png'%}" alt="Again!">
     </div>    
