@@ -155,6 +155,7 @@ EMAIL_HOST_PASSWORD = 'knnxztxrndxajhrc'
 AUTHENTICATION_BACKENDS = [
     'social_core.backends.github.GithubOAuth2',
     'django.contrib.auth.backends.ModelBackend',
+    'social_core.backends.google.GoogleOAuth2'
 ]
 
 LOGIN_URL = 'login'
@@ -164,3 +165,6 @@ LOGOUT_REDIRECT_URL = 'homepage'
 
 SOCIAL_AUTH_GITHUB_KEY = 'eb4ea2d458e6fa3d876b'
 SOCIAL_AUTH_GITHUB_SECRET = 'c004764b9d99948a18a7ff6344b0f0c86eb45e30'
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '1074004345430-2i36kchnds4f44vrqranv9k4pn26o29b.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'

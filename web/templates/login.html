@@ -35,7 +35,7 @@ Log in
         <a href="{% url 'social:begin' 'github' %}"><img class="gitlog" src="{% static 'Github.png'%}" alt="Log in with GitHUb!"></a>
     </div>
     <div class="containergooglelog">
-        <a href="#"><img class="googlelog" src="{% static 'googlelogo.png'%}" alt="Log in with Google!"></a>
+        <a href="{% url 'social:begin' 'google-oauth2' %}"><img class="googlelog" src="{% static 'googlelogo.png'%}" alt="Log in with Google!"></a>
     </div>
     <br>
 </div>
