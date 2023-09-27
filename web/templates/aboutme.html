@@ -7,6 +7,10 @@
 <link rel="stylesheet" type="text/css" href="{% static 'aboutme.css' %}">
 {%endblock head%}
 {%block content%}
+{% comment %} Background video. {% endcomment %}
+<div class="fullscreen-bg">
+    <video src="../static/background.mp4" class="fullscreen" loop muted autoplay poster="../static/poster.jpg"></video>
+</div>
 <div class="island">
     <h1>Who I Am?</h1>
     {%load static%}

@@ -14,6 +14,10 @@
   }
 {%endblock style%}
 {% block content %}
+{% comment %} Background video. {% endcomment %}
+<div class="fullscreen-bg">
+  <video src="../static/background.mp4" class="fullscreen" loop muted autoplay poster="../static/poster.jpg"></video>
+</div>
 {% comment %} Text. {% endcomment %}
 <div class="container">
   <h1>HELLO & WELCOME</h1>

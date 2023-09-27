@@ -113,3 +113,5 @@ def contact(request):
             return render(request, 'contact_response.html', {"name":name})
     return render(request, "contact.html", {'form':form})
 
+def money (request):
+    return render(request, 'money.html')
