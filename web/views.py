@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import ContactForm
 from django.core.mail import EmailMessage
 from django.contrib.auth import views as auth_views
+import requests
 
 #Home 
 def homepage(request):
@@ -72,6 +73,7 @@ def Logout(request):
     return render(request, 'index.html')
     
 #Contact
+@login_required
 def contact(request):
     form = ContactForm()
     if request.method == "POST":
@@ -114,4 +116,12 @@ def contact(request):
     return render(request, "contact.html", {'form':form})
 
 def money (request):
-    return render(request, 'money.html')
+    response = requests.get("https://api.coingecko.com/api/v3/simple/price", params={"ids": "bitcoin", "vs_currencies": "usd"})
+    if response.status_code == 200:
+        bitcoin_data = response.json()
+        bitcoin_price_usd = bitcoin_data["bitcoin"]["usd"]
+        bitcoin_price_usd = int(bitcoin_price_usd)
+        usd_price_bitcoin = round(1 / bitcoin_price_usd, 9)
+    else:
+        bitcoin_price_usd = "It was not possible to retrieve the exchange rate of bitcoin usd pair."
+    return render(request, 'money.html', {'bitcoin_price_usd': bitcoin_price_usd, 'usd_price_bitcoin':usd_price_bitcoin})

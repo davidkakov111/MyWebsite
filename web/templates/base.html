@@ -56,9 +56,9 @@
               {%endif%}
               {% comment %} Withouth login. {% endcomment %}
               {% if not user.is_authenticated %}
-                <a class="dropdown-item" onclick="location.href='{%url "login"%}'">Contact (Login required)</a>
+                <a class="dropdown-item" onclick="location.href='{%url "login"%}'">Login To Contact</a>
               {%endif%}
-              <a class="dropdown-item" onclick="location.href='{%url "money"%}'">Unveiling the truth!</a>
+              <a class="dropdown-item" onclick="location.href='{%url "money"%}'">Money or BTC</a>
             </div>
           </li>
         </ul> 
