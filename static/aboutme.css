@@ -27,8 +27,10 @@ h1 {
     position: relative;
     float: left;
     width: 39%;
-    margin: 2%;
-    margin-bottom: 1%;
+    margin-top: 2%;
+    margin-right: 2%;
+    margin-left: 2%;
+    margin-bottom: 0%;
 }
 .contain {
     position: relative;
