@@ -1,0 +1,8 @@
+SECRET_KEY = 'django-insecure-e53jog2g!d+d!ql&(avahr#(dxu+*09rerd4mqoeh4m5%xs3!x'
+Database_password = 'VfMnaTRB5Lg2'
+Database_HOST = 'ep-broken-disk-55251045-pooler.us-east-1.postgres.vercel-storage.com'
+EMAIL_HOST_PASSWORD = 'knnxztxrndxajhrc'
+SOCIAL_AUTH_GITHUB_KEY = 'eb4ea2d458e6fa3d876b'
+SOCIAL_AUTH_GITHUB_SECRET = 'c004764b9d99948a18a7ff6344b0f0c86eb45e30'
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '1074004345430-2i36kchnds4f44vrqranv9k4pn26o29b.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'

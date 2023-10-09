@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+from .import private_datas
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-e53jog2g!d+d!ql&(avahr#(dxu+*09rerd4mqoeh4m5%xs3!x'
+SECRET_KEY = private_datas.SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -92,8 +93,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'verceldb',
         'USER': 'default',
-        'PASSWORD': 'VfMnaTRB5Lg2',
-        'HOST': 'ep-broken-disk-55251045-pooler.us-east-1.postgres.vercel-storage.com',
+        'PASSWORD': private_datas.Database_password,
+        'HOST': private_datas.Database_HOST,
         'PORT': '5432',
     }
 }
@@ -150,7 +151,7 @@ EMAIL_USE_SSL = False
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'kovacsdavid648@gmail.com'
-EMAIL_HOST_PASSWORD = 'knnxztxrndxajhrc'
+EMAIL_HOST_PASSWORD = private_datas.EMAIL_HOST_PASSWORD
 
 
 # Social app custom settings
@@ -165,8 +166,8 @@ LOGIN_REDIRECT_URL = 'homepage'
 LOGOUT_URL = 'logout'
 LOGOUT_REDIRECT_URL = 'homepage'
 
-SOCIAL_AUTH_GITHUB_KEY = 'eb4ea2d458e6fa3d876b'
-SOCIAL_AUTH_GITHUB_SECRET = 'c004764b9d99948a18a7ff6344b0f0c86eb45e30'
+SOCIAL_AUTH_GITHUB_KEY = private_datas.SOCIAL_AUTH_GITHUB_KEY
+SOCIAL_AUTH_GITHUB_SECRET =  private_datas.SOCIAL_AUTH_GITHUB_SECRET
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '1074004345430-2i36kchnds4f44vrqranv9k4pn26o29b.apps.googleusercontent.com'
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY =  private_datas.SOCIAL_AUTH_GOOGLE_OAUTH2_KEY
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET =  private_datas.SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET
