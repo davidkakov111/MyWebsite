@@ -14,14 +14,20 @@
 <div class="island">
     <h1>Who I Am?</h1>
     {%load static%}
-    {% comment %} Selfie. :) {% endcomment %}
-    <div>
-        <img class="img_me" src="{% static 'me.png'%}" alt="Me">
+    {% comment %} Selfie. {% endcomment %}
+    <div class="img_me">
+        <img position="relative" width="100%" height"100%" src="{% static 'me.png'%}" alt="Me">
     </div>
     {% comment %} Informations... {% endcomment %}
     <p>Let me introduce myself — I'm Kovács Dávid, an avid programming enthusiast, specializing in frontend web development. With a fervent dedication to staying on the cutting edge of development trends, I thrive on tackling challenges and finding innovative solutions. My ultimate goal? To craft mesmerizing digital experiences that leave users in awe. My unwavering commitment to both quality and efficiency sets the stage for my contributions.</p>
-    <p>While I've always had a keen interest in programming and emerging technologies, I've embarked on a journey to prove my mettle. This page serves as a canvas to showcase my current programming prowess and knowledge in its rawest form. Amongst the array of programming languages, Python stands as my forte, and I operate at an intermediate level of proficiency. I also contribute to the Python community and identified and reported a <a href="https://github.com/itayb1/solana-pay-py/issues/5">bug</a> in the awesome Solana Pay Python SDK.
-    At present, I'm fully immersed in the world of HTML website development. Leveraging my Python expertise with the Django framework and meticulously crafting user interfaces with CSS are my daily pursuits. I keep my sails open to explore new technologies and languages, ready to adapt to the ever-evolving landscape of the software development realm.</p>
+    <p>While I've always had a keen interest in programming and emerging technologies, I've embarked on a journey to prove my mettle. This page serves as a canvas to showcase my current programming prowess and knowledge in its rawest form. Amongst the array of programming languages, Python stands as my forte, and I operate at an intermediate level of proficiency. I also contribute to the Python community by identifying and reporting <span id="toggle-button" style="text-decoration: underline; cursor: pointer; color: rgb(10, 160, 197);">bugs</span>.</p>
+    <div class="toggle-box" id="content">
+        <ul>
+            <li><a href="https://github.com/metaplex-foundation/python-api/issues/47">Metaplex Python Api.</a></li>
+            <li><a href="https://github.com/itayb1/solana-pay-py/issues/5">Solana Pay Python SDK.</a></li>
+        </ul>
+    </div>
+    <p>At present, I'm fully immersed in the world of HTML website development. Leveraging my Python expertise with the Django framework and meticulously crafting user interfaces with CSS are my daily pursuits. I keep my sails open to explore new technologies and languages, ready to adapt to the ever-evolving landscape of the software development realm.</p>
     {% comment %} Login is required. {% endcomment %}
     {% if user.is_authenticated %}
         <p>Don't Hesitate! Contact me <a href="{%url 'contact'%}">here</a>!</p>
@@ -43,4 +49,21 @@
         </div>
     <div>
 </div>
+<script>
+    const toggleButton = document.getElementById('toggle-button');
+    const content = document.getElementById('content');
+    let hideTimeout;
+    
+    toggleButton.addEventListener('click', function() {
+        content.style.display = 'block';
+    });
+    toggleButton.addEventListener('mouseenter', function() {
+        content.style.display = 'block';
+    });
+    document.addEventListener('click', function(event) {
+        if (event.target !== toggleButton) {
+            content.style.display = 'none';
+        }
+    });
+</script>
 {%endblock content%}

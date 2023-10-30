@@ -26,6 +26,7 @@ urlpatterns = [
     path('', views.homepage,  name="homepage"),
     path('game/', views.game, name='game'),
     path('aboutme/', views.aboutme, name="aboutme"),
+    path('store/', views.store, name="store"),
     path('signup/', views.signup, name="signup"),
     path('login/', views.Login, name="login"),
     path('logout/', views.Logout, name='logout'),

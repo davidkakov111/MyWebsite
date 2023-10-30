@@ -1,7 +1,7 @@
 .advertisements {
     position: absolute;
     white-space: nowrap;
-    animation: pushing 30s linear infinite;
+    animation: pushing 15s linear infinite;
     width: 100%;
     display: flex;
     align-items: center;

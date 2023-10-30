@@ -6,6 +6,9 @@
   left: 0;
   z-index: -100;
 }
+a:visited {
+  color: rgb(10, 10, 197);
+}
 .fullscreen {
   position: absolute;
   top: 50%;

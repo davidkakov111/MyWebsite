@@ -19,6 +19,10 @@ def game(request):
 def aboutme(request):
     return render(request, 'aboutme.html')
 
+#Store
+def store(request):
+    return render(request, 'store.html')
+
 #Sign Up
 def signup(request):
     if request.method == "GET":
