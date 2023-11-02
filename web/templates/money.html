@@ -1,0 +1,146 @@
+{%extends 'base.html'%}
+{%block title%}Money{%endblock%}
+{%block head%}
+{%load static%}
+<link rel="stylesheet" type="text/css" href="{% static "money.css" %}">
+{%endblock head%}
+{%block content%}
+{% comment %} Background color for navigation bar. {% endcomment %}
+<div class="nav"></div>
+{% comment %} Dollar in fire image {% endcomment %}
+<img src="../static/moneyfire.jpg" class="flame" alt="moneyfire.jpg">
+<div class="titlebox1">
+    <p>Biggest</p>
+</div>
+<div class="titlebox3">
+    <p>Scam?</p>
+</div>
+{% comment %} Black background for the top of website. {% endcomment %}
+<div class="afternav"></div>
+{% comment %} Black island for the content. {% endcomment %}
+<div class="f_b_c">
+    {% comment %} Texts. {% endcomment %}
+    <p class="big">What is money? </p>
+    <p class="text">To be honest, today, <b>money</b> is nothing more than a piece of paper or numbers in the banking system, and its value is determined by <b>supply</b> and <b>demand</b>.</p>
+    <p class="text">If demand exceeds supply, its value rises; if supply exceeds demand, its value decreases, it's that simple!</p>
+    <br>
+    {% comment %} Inflation chart with "scam money". {% endcomment %}
+    <div class="centerimg" >
+        <img width="90%" src="../static/inflation.jpg" alt="Inflation chart.">
+        <img style="z-index: 2; position: absolute;  width: 30%; border-radius: 40px; left: 35%; top: 30%;" width="90%" src="../static/scam.jpg" alt="Scam money!">
+    </div>
+    <br>
+    {% comment %} Another texts. {% endcomment %}
+    <p class="text" >The <b>inflation</b> graph above clearly shows that until President Nixon removed the <b>gold standard</b> in 1971, the value of money remained relatively stable because the supply couldn't be easily increased, as it would have required gold reserves, and there is limited accessible gold.</p>
+    <p class="bigtext">But after the removal of the gold standard, everything changed!</p>
+    <p class="text" >Now, it's possible to increase the <b>money supply</b> without real constraints, leading to inflation. Since then, there has been a dramatic increase in the money supply through various means. </p>
+    <p class="text" >This inflation accelerates the economy by creating artificial demand. Inflation becomes integrated into the economy, and if it were to suddenly stop, the economy could collapse because the artificial demand would vanish, and it couldn't satisfy supply. So, the economy becomes <b>addicted to inflation</b>, leading to a long-term increase in inflation, eventually resulting in hyperinflation where the value of money is completely eroded.</p>
+    <br>
+    {% comment %} Photo from the effect of hiperinflation... {% endcomment %}
+    <div class="centerimg" >
+        <img width="90%" src="../static/hiperinflation.jpg" alt="Hiper inflation jpg.">
+    </div>
+    <br>
+    {% comment %} Another texts. {% endcomment %}
+    <p class="text" >Alternatively, it's possible that another scenario, though less likely, would occur where the <b>economy crashes</b> due to a complete halt in the increase of the money supply, causing devastation to nations. But at least it stops inflation, preserving the value of money in the long run.</p>
+    <p class="text" >The increase in the money supply is carried out by the <b>banking system</b> in conjunction with the government. The central bank creates money when it deems it necessary, and commercial banks also generate money through lending. Approximately <b>95% of the money supply</b> is created by commercial banks.</p>
+    <p class="text">In the process of lending, banks create <b>new money</b> that the borrower must repay with interest. The more lending occurs, the greater the money supply grows, leading to <b>inflation</b>. Consequently, the value of your money decreases over time. The bank, on the other hand, becomes wealthier and wealthier. That's why they want you to save money, so they can sustain this value-extracting mechanism, which enriches them while leaving you with less.</p>
+    <br>
+    {% comment %} J.P. money printing gif. {% endcomment %}
+    <div class="centerimg" >
+        <video width="90%" loop muted autoplay poster="../static/printingcover.jpg" src="../static/printvideo.mp4">
+    </div>
+    <br>
+    {% comment %} Another texts. {% endcomment %}
+    <p class="text">So, they've effectively <b>manipulated</b> the minds of many people by leading them into <b>inevitable losses</b> from which they <b>profit easily</b>. Let's not forget that the banking system wasn't created to serve the people; in reality, banks are <b>profit-oriented entities</b>.</p>
+    <p class="text">Moreover, the current monetary system is not efficient enough. International transfers can take <b>days</b>, and <b>bureaucracy</b> can become a significant hurdle for larger transactions. Banks can decide when, how much, and for what purposes you can spend your money, and in reality, they hold your funds; you only have <b>limited control</b> over your money's direction.</p>
+    <p class="big">What can we do? </p>
+    <p class="text">On the long term, do not hold value in money; invest it elsewhere, it doesn't matter much where, as long as it's not in cash. It's certain that cash will depreciate over time due to inflation.</p>
+    <p class="text">We also have another <b>exciting opportunity</b>, which is none other than <b>blockchain technology</b>!</p>
+    <p class="text">In response to the 2008 financial crisis, an unknown individual or entity created <a href="https://bitcoin.org/en/bitcoin-paper">Bitcoin</a> in 2009 under the pseudonym <b>Satoshi Nakamoto</b>.</p>
+    <br>
+    {% comment %} Introducing video for Bitcoin. {% endcomment %}
+    <div class="vid" >
+        <iframe width="90%" height="100%" src="https://www.youtube.com/embed/kmBF56xeppA?si=KC4sQ8BKB6NwmzTD"frameborder="0" allowfullscreen></iframe>
+    </div>
+    <br>
+    {% comment %} Another texts. {% endcomment %}
+    <p class="text">The fundamental principle of <b>Bitcoin</b> is to enable individuals to maintain <b>full control</b> over their money without the interference of third parties or central institutions. Among the <b>advantages</b> of this <b>decentralization</b> are increased <b>financial independence and enhanced data privacy</b>.</p>
+    <p class="text"><b>Bitcoin is an open-source, peer to peer, electronic cash system</b>. It operates in a decentralized manner with independent nodes, referred to as <b>miners</b>, who effectively maintain the Bitcoin ledger through the consensus mechanism known as proof of work.</p>
+    <br>
+    {% comment %} Ilustration about decentralization. {% endcomment %}
+    <div class="centerimg" >
+        <img width="90%" src="../static/blockchain1.jpg" alt="Blockchain">
+    </div>
+    <br>
+    {% comment %} Another texts. {% endcomment %}
+    <p class="text">The Proof of Work mechanism makes it difficult to manipulate or attack the network. An attacker would need to outperform all other miners to successfully manipulate transactions.</p>
+    <p class="text">Which is not really possible even for countries because the computational capacity on the network keeps growing continuously, and with the use of efficient mining machines, it consumes as much electricity as an entire <b>medium-sized European country</b>. So, we can confidently state that an attacker would need to surpass even this computational capacity, so it's not possible.</p>
+    <p class="text">Thanks to this technology, an indestructible financial system has emerged, spreading like an <b>invulnerable virus</b> worldwide. Therefore, our money on the network is 100% secure, and our Bitcoins cannot be taken from us unless we share our <b>private keys</b>, which grant access to our funds. Thus, with knowledge, Bitcoin has become the second thing that <b>cannot be taken from us</b>, provided we safeguard our data.</p>
+    <br>
+    {% comment %} Bitcoin photo. {% endcomment %}
+    <div class="centerimg" >
+        <img width="90%" src="../static/bitcoin.jpg" alt="Bitcoin">
+    </div>
+    <br>
+    {% comment %} Another texts. {% endcomment %}
+    <p class="text">So, we have a peer-to-peer electronic cash system where our assets are incorruptible digital property, finite in supply, encryptable and portable. With an internet connection, it's accessible and usable for everyone, and you can send substantial amounts of money to anywhere, even to China, in exchange for a few minutes. <b>What else do we need?</b></p>
+    <p class="text">The answer is that it provides <b>more transaction outputs and lower fees for everyday use</b>. Currently, the network can handle only 6 transactions per second for a few dollars each, which is not a significant cost when transferring larger sums of money. However, it wouldn't be feasible for everyday purchases at such a high cost and slow speed. To address this, several other blockchain networks have sought and found <b>solutions</b>, but none have been as <b>secure</b> as Bitcoin. Fortunately, with Bitcoin, we also have the option to conduct a large number of transactions <b>almost for free and at lightning speed</b> through the <a href="https://lightning.network/">Lightning Network.</a> This means we can use Bitcoin in our daily lives as well.</p>
+    <br>
+    {% comment %} Bitcoin ilustration. {% endcomment %}
+    <div class="centerimg" >
+        <img width="90%" src="../static/lightningbtc.jpg" alt="Bitcoin lightning network">
+    </div>
+    <br>
+    {% comment %} Another texts. {% endcomment %}
+    <p class="text"><b>Bitcoin's value</b>, like anything else, is determined by the interaction of supply and demand. Bitcoin is often referred to as <b>digital gold</b> because it shares certain characteristics with gold: it has a <b>finite supply, is difficult to mine</b>, and can be used as a form of money, similar to gold. However, Bitcoin excels in some aspects, such as its role as a currency, and <b>its supply is even scarcer than that of gold</b>, which is why its value has tended to increase more significantly over the long term. Nevertheless, there are areas where gold holds an advantage, such as its physical properties and long-standing history as a store of value.</p>
+    <p class="text">The value of Bitcoin experiences significant short-term fluctuations, but in the long term, it tends to increase due to its limited supply and <b>growing demand</b>. This demand arises from both its utility and human greed, although demand driven by greed is usually short-lived because the price eventually crashes, causing greedy speculators to exit the market. Therefore, the primary reasons for its long-term value appreciation are its utility and limited supply.</p>
+    <p class="text"> The rate of increase in the quantity of Bitcoin is <b>halving</b> every four years, leading to the formation of <b>bull markets</b>. These are well illustrated in the Bitcoin price chart below because less Bitcoin enters the market than usual, causing the price to increase even with stagnant demand. Greedy individuals often respond by buying, driving the price even higher in the short term. However, it typically falls back to more realistic levels afterward.</p>
+    <p class="big">Current Bitcoin Price:</p>
+    {% comment %} Advertisements box. {% endcomment %}
+    <div class="advertisements">
+        {% comment %} BTC price in USD displayed on a truck. {% endcomment %}
+        <div class="ad">
+            <div class="green">BTC <b>/</b> USD: {{bitcoin_price_usd}}</div>
+            <img src="../static/truck.png" width="60%">
+        </div>
+        {% comment %} USD price in BTC displayed on a truck. {% endcomment %}
+        <div class="ad">
+            <div class="red">USD <b>/</b> BTC: {{usd_price_bitcoin}}</div>
+            <img src="../static/truck.png" width="60%">
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    {% comment %} Bitcoin/USD logaritmic price chart. {% endcomment %}
+    <div class="centerimg" >
+        <img width="90%" src="../static/btcprice.jpg" alt="Bitcoin price chart">
+    </div>
+    <br>
+    {% comment %} Another texts. {% endcomment %}
+    <p class="text">The price chart visually demonstrates the <b>cyclical nature</b> of Bitcoin's price movements, driven by its unique supply and demand dynamics, utility, and speculative trading behavior.</p>
+    <p class="text">Bitcoin's price often surges, driven mainly by greed, leading to headlines of a "Bitcoin bubble." However, it subsequently experiences a price drop, sometimes leading to proclamations that Bitcoin is "dead." This drop occurs as speculative demand fueled by greed disappears from the market. In the long term, it becomes evident that Bitcoin's value appreciates due to its utility, limited supply and due to the inflation of the dollar.</p>
+    <p class="text">Over the past 14 years, Bitcoin has proven to be an <b>excellent store of value</b>, and considering the facts, it's highly likely to continue being one in the future. Its value appreciation is driven by its <b>usability and scarcity</b>. Therefore, Bitcoin has demonstrated its potential to preserve value over time, and it is expected to do so with a high degree of probability in the future.</p>
+    <p class="text"><b>Bitcoin and blockchain technology</b> are becoming increasingly <b>mainstream</b> and are gradually integrating into our <b>everyday lives</b>. There are places where <b>Bitcoin is recognized as legal tender</b>, such as in the country of <b>El Salvador</b>, where the government even mines Bitcoin using volcanic energy.</p>
+    <br>
+    <p class="bigt">Choose one wisely!</p>
+    {% comment %} The person from matrix. {% endcomment %}
+    <div class="centerimg" >
+        <img width="45%" src="../static/matrix.jpg" alt="So, what do you choose?">
+    </div>
+    {% comment %} Ilustrations about BTC and USD. {% endcomment %}
+    <div class="choce" >
+        <div class="BtC">
+            <a href="https://www.google.com/finance/quote/BTC-USD?window=MAX"><img src="../static/BTC.jpg" alt="Bitcoin"></a>
+        </div>
+        <div class="UsD">
+            <a href="https://www.google.com/finance/quote/USD-BTC?sa=X&ved=2ahUKEwi-_rzIidCBAxXXNOwKHemXAO0Q-fUHegQIBhAf&window=MAX"><img src="../static/USD.jpg" alt="'Money'"></a>
+        </div>
+    </div>
+    <br>
+    {% comment %} Another text. {% endcomment %}
+    <p class="big">The choice is yours!</p>
+    <br>
+</div>
+{%endblock content%}
