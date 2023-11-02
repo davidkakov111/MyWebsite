@@ -7,19 +7,10 @@
     align-items: center;
 }
 .ad {
-    flex: 0 0 auto;
-    margin-right: -10%;
     white-space: nowrap;
     font-weight: 600;
     font-size: large;
-}
-@keyframes pushing {
-    0% {
-        transform: translateX(100%);
-    }
-    100% {
-        transform: translateX(-90%); 
-    }
+    flex: 0 0 auto;
 }
 .green {
     color: green;
@@ -37,13 +28,11 @@
     height: 65px;
     width: 100%;
     top: 0;
-    left: 0;
-    right: 0;
     position: absolute;
     background: linear-gradient(to top, rgb(1, 1, 22), rgb(2, 3, 56), rgb(3, 5, 85), rgb(2, 2, 143));
 }
 .afternav {
-    height: 780px;
+    height: 750px;
     width: 100%;
     top: 65px;
     left: 0;
@@ -64,6 +53,7 @@
     font-family: serif;
     margin: 5%;
     padding: 2%;
+    padding-top: 70px;
     background-color: black;
     box-shadow: 0px 0px 20px rgba(0, 0, 0);
     overflow: hidden;
@@ -91,9 +81,7 @@
     align-items: center;
 }
 .choce {
-    position: relative fixed;
     display: flex;
-
 }
 .BtC {
     position: relative;
@@ -106,8 +94,8 @@
     width: 100%;
 }
 .BtC:active {
-    width: 43%;
     margin-left: 4.5%;
+    width: 43%;
 }
 .BtC img:hover {
     box-shadow: 0px 0px 20px rgb(0, 255, 17);
@@ -163,6 +151,22 @@
 p {
     cursor: default;
 }
+@keyframes pushing {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-90%); 
+    }
+}
+@media (min-height: 750px) {
+    .afternav {
+        height: 100vh;
+    }
+    .f_b_c {
+        top: 90vh;
+    }
+}
 @media (max-width: 1600px) {
     .vid {
         height: 700px;
@@ -172,8 +176,10 @@ p {
     .vid {
         height: 600px;
     }
+    .f_b_c {
+        padding-top: 110px;
+    }
 }
-
 @media (max-width: 1200px) {
     .flame {
         width: 500px;
@@ -231,7 +237,15 @@ p {
         top: 450px;
     }
 }
+@media (max-width: 767px) {
+    #navbarCollapse {
+        background-color: rgb(0, 0, 0, 0.9);
+    }
+}
 @media (max-width: 700px) {
+    .f_b_c {
+        padding-top: 150px;
+    }
     .vid {
         height: 300px;
     }

@@ -2,8 +2,8 @@
     position: relative;
     bottom: auto;
     height: auto;
-    padding-top: 4%;
     margin-bottom: 2%;
+    padding-top: 4%;
     padding: 2%;
     width: 75%;
     left: 50%;
@@ -44,7 +44,7 @@ p {
     float: left;
     width: 30%;
     margin-right: 4%;
-    animation: rotate 7s linear infinite;
+    animation: rotate 5s linear infinite;
 }
 .decor1 {
     position: absolute;
@@ -62,44 +62,30 @@ p {
     width: 70%;
     z-index: -1;
 }
-.myshop {
+.buttons {
     position: relative;
     margin: 20px;
-    left: 33%;
-    width: 170px;
     height: 60px;
     border-radius: 30px;
     background-color: rgb(91, 13, 207);
     color: white;
     font-size: larger;
 }
-.myshop:hover {
-    background-color: rgb(172, 135, 227);
-    color: black;
-    animation: rotate 0.6s linear infinite;
-}
-.myshop.block-animation {
-    animation: none;
-    background-color: rgb(255, 255, 255);
+.myshop {
+    left: 33%;
+    width: 170px;
 }
 .sourcecode {
-    position: relative;
-    margin: 20px;
     right: 33%;
     float: right;
     width: 200px;
-    height: 60px;
-    border-radius: 30px;
-    background-color: rgb(91, 13, 207);
-    color: white;
-    font-size: larger;
 }
-.sourcecode:hover {
+.sourcecode:hover, .myshop:hover {
     background-color: rgb(172, 135, 227);
     color: black;
     animation: rotate 0.6s linear infinite;
 }
-.sourcecode.block-animation {
+.sourcecode.block-animation, .myshop.block-animation {
     animation: none;
     background-color: rgb(255, 255, 255);
 }
@@ -240,10 +226,10 @@ p {
 }
 @media(max-width: 560px) {
     h4 {
-        font-size: 11px;
+        font-size: 15px;
     }
     p {
-        font-size: 9px;
+        font-size: 14px;
     }
     .sourcecode {
         width: 95px;
@@ -259,12 +245,20 @@ p {
         width: 86%;
     }
 }
-@media(max-width: 490px) {
+@media(max-width: 500px) {
     h2 {
-        font-size: 13px;
+        font-size: 16px;
         margin-left: 9%;
         margin-right: 9%;
     }
+    h4 {
+        font-size: 16px;
+    }
+    p {
+        font-size: 16px;
+    }
+}
+@media(max-width: 490px) {
     .sourcecode {
         right: 17%;
     }
@@ -273,12 +267,6 @@ p {
     }
 }
 @media(max-width: 430px) {
-    h4 {
-        font-size: 9px;
-    }
-    p {
-        font-size: 8px;
-    }
     .sourcecode {
         width: 80px;
         height: 32px;
@@ -289,11 +277,17 @@ p {
         height: 32px;
         font-size: xx-small;
     }
+    h2 {
+        font-size: 14px;
+    }
+    h4 {
+        font-size: 15px;
+    }
+    p {
+        font-size: 15px;
+    }
 }
 @media(max-width: 340px) {
-    h2 {
-        font-size: 10px;
-    }
     .sourcecode {
         width: 72px;
         height: 29px;

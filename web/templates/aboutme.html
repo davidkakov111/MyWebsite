@@ -7,13 +7,8 @@
 <link rel="stylesheet" type="text/css" href="{% static 'aboutme.css' %}">
 {%endblock head%}
 {%block content%}
-{% comment %} Background video. {% endcomment %}
-<div class="fullscreen-bg">
-    <video src="../static/background.mp4" class="fullscreen" loop muted autoplay poster="../static/poster.jpg"></video>
-</div>
 <div class="island">
     <h1>Who I Am?</h1>
-    {%load static%}
     {% comment %} Selfie. {% endcomment %}
     <div class="img_me">
         <img position="relative" width="100%" height"100%" src="{% static 'me.png'%}" alt="Me">
@@ -21,6 +16,7 @@
     {% comment %} Informations... {% endcomment %}
     <p>Let me introduce myself — I'm Kovács Dávid, an avid programming enthusiast, specializing in frontend web development. With a fervent dedication to staying on the cutting edge of development trends, I thrive on tackling challenges and finding innovative solutions. My ultimate goal? To craft mesmerizing digital experiences that leave users in awe. My unwavering commitment to both quality and efficiency sets the stage for my contributions.</p>
     <p>While I've always had a keen interest in programming and emerging technologies, I've embarked on a journey to prove my mettle. This page serves as a canvas to showcase my current programming prowess and knowledge in its rawest form. Amongst the array of programming languages, Python stands as my forte, and I operate at an intermediate level of proficiency. I also contribute to the Python community by identifying and reporting <span id="toggle-button" style="text-decoration: underline; cursor: pointer; color: rgb(10, 160, 197);">bugs</span>.</p>
+    {% comment %} Div with bug report links. {% endcomment %}
     <div class="toggle-box" id="content">
         <ul>
             <li><a href="https://github.com/metaplex-foundation/python-api/issues/47">Metaplex Python Api.</a></li>
@@ -30,14 +26,12 @@
     <p>At present, I'm fully immersed in the world of HTML website development. Leveraging my Python expertise with the Django framework and meticulously crafting user interfaces with CSS are my daily pursuits. I keep my sails open to explore new technologies and languages, ready to adapt to the ever-evolving landscape of the software development realm.</p>
     {% comment %} Login is required. {% endcomment %}
     {% if user.is_authenticated %}
-        <p>Don't Hesitate! Contact me <a href="{%url 'contact'%}">here</a>!</p>
-    {%endif%}
-    {% comment %} Without login. {% endcomment %}
-    {% if not user.is_authenticated %}
-        <p>Don't Hesitate! Log in to contact me <a href="{%url 'login'%}">here</a>!</p>
+        <p>Don't Hesitate! <a href="{%url 'contact'%}">Contact me</a>!</p>
+    {%else%}
+        <p>Don't Hesitate! <a href="{%url 'login'%}">Log in</a> to contact me!</p>
     {%endif%}
     <br>
-    {% comment %} Go to my GitHub profile. {% endcomment %}
+    {% comment %} My GitHub profile. {% endcomment %}
     <div class="contain">
         <div>
             <a href="https://github.com/davidkakov111">
@@ -50,10 +44,10 @@
     <div>
 </div>
 <script>
+    {% comment %} Java Script for the tooggle button. {% endcomment %}
     const toggleButton = document.getElementById('toggle-button');
     const content = document.getElementById('content');
     let hideTimeout;
-    
     toggleButton.addEventListener('click', function() {
         content.style.display = 'block';
     });

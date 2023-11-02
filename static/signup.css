@@ -4,16 +4,18 @@
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
-    max-width: 300px;
-    max-height: 520px;
-    margin-bottom: 5%;
-    background-color: rgb(179, 176, 13);
+    width: 300px;
+    height: 520px;
+    margin-bottom: 4%;
     padding: 2%;
+    padding-top: 1%;
     padding-bottom: 1%;
+    background-color: rgb(179, 176, 13);
     box-shadow: 0px 0px 20px rgba(0, 0, 0);
 }
 h1 {
     cursor: default;
+    font-size: 40px;
 }
 p {
     cursor: default;
@@ -33,10 +35,11 @@ p {
 .boxx {
     position: relative;
     height: 30px;
+    width: 100%;
 }
 .hrleft {
     position: absolute;
-    width: 23%;
+    width: 25%;
     left: 0%;
 }
 .or {
@@ -47,34 +50,26 @@ p {
 }
 .hrright {
     position: absolute;
-    width: 23%;
+    width: 25%;
     right: 0%;
 }
-.containergitlog {
-    position: relative;
+.container {
+    position: absolute;
     width: 60px;
     height: 60px;
-    margin: 0 auto;
-    left: -85px;
+    margin-top: 3%;
 }
-.gitlog {
+.containergit {
+    left: 15%;
+}
+.containergoogle {
+    right: 15%;
+}
+.container-content {
     position: absolute;
     width: 100%;
     height: 100%;
-    bottom: -15%;
-}
-.containergooglelog {
-    position: relative;
-    width: 57px;
-    height: 57px;
-    margin: 0 auto;
-    right: -25px;
-}
-.googlelog {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    bottom: 85%;
+    transform: translateX(-50%);
 }
 #email {
     background-color: rgba(205, 205, 140);
@@ -85,19 +80,25 @@ p {
 #pasword {
     background-color: rgba(205, 205, 140);
 }
-@media (max-width: 767px) {
-    .island {
-        padding-top: 4%;
+@media (min-width: 1400px) {
+    .hrright {
+        right: -7%;
+    }
+    .hrleft {
+        left: -7%;
+    }
+    .or {
+        font-size: 14px;
     }
 }
-@media (max-width: 400px) {
+@media (max-width: 700px) {
     .island {
-        padding-top: 6%;
+        padding-top: 3%;
     }
 }
 @media (max-width: 350px) {
     .island {
-        max-width: 250px;
+        width: 250px;
     }
     .or {
         font-size: smaller;
@@ -106,7 +107,7 @@ p {
 }
 @media (max-width: 300px) {
     .island {
-        padding-top: 8%;
-        max-width: 220px;
+        padding-top: 5%;
+        width: 220px;
     }
 }

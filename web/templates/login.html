@@ -7,15 +7,11 @@ Log In
 <link rel="stylesheet" type="text/css" href="{% static 'login.css' %}">
 {%endblock head%}
 {%block content%}
-{% comment %} Background video. {% endcomment %}
-<div class="fullscreen-bg">
-  <video src="../static/background.mp4" class="fullscreen" loop muted autoplay poster="../static/poster.jpg"></video>
-</div>
 {% comment %} Yellow island. {% endcomment %}
 <div class="island">
     {% comment %} Login inputs and labels. {% endcomment %}
     <div class="content">
-        <h1><b>Log In!</b></h1>
+        <h1><b>Log In</b></h1>
         <br>
         <form method="post">
             {% csrf_token %}
@@ -43,12 +39,12 @@ Log In
         </div>
     </div>
     {% comment %} GitHub login option. {% endcomment %}
-    <div class="containergitlog">
-        <a href="{% url 'social:begin' 'github' %}"><img class="gitlog" src="{% static 'Github.png'%}" alt="Log in with GitHUb!"></a>
+    <div class="container containergit">
+        <a href="{% url 'social:begin' 'github' %}"><img class="container-content" src="{% static 'Github.png'%}" alt="GitHUb"></a>
     </div>
     {% comment %} Google login option. {% endcomment %}
-    <div class="containergooglelog">
-        <a href="{% url 'social:begin' 'google-oauth2' %}"><img class="googlelog" src="{% static 'googlelogo.png'%}" alt="Log in with Google!"></a>
+    <div class="container containergoogle">
+        <a href="{% url 'social:begin' 'google-oauth2' %}"><img class="container-content" src="{% static 'googlelogo.png'%}" alt="Google"></a>
     </div>
     <br>
 </div>

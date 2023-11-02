@@ -14,11 +14,11 @@
     position: relative;
     bottom: auto;
     height: auto;
+    margin-bottom: 2%;
     padding-top: 4%;
     padding: 2%;
     width: 74%;
     left: 50%;
-    margin-bottom: 2%;
     transform: translateX(-50%);
     background-color: rgb(179, 176, 13);
     box-shadow: 0px 0px 20px 5px rgb(0, 0, 0);
@@ -40,9 +40,9 @@ h1 {
     float: left;
     width: 39%;
     margin-top: 2%;
+    margin-bottom: 0%;
     margin-right: 2%;
     margin-left: 2%;
-    margin-bottom: 0%;
 }
 .contain {
     position: relative;
@@ -62,8 +62,8 @@ h1 {
     bottom: 27%;
     width: 65px;
     left: 50%;
-    z-index: 1;
     transform: translateX(22%);
+    z-index: 1;
 }
 @media (max-width: 767px) {
     .island {

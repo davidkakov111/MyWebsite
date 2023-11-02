@@ -5,25 +5,27 @@ from django.contrib.auth.decorators import login_required
 from .forms import ContactForm
 from django.core.mail import EmailMessage
 from django.contrib.auth import views as auth_views
+from django.http import HttpResponse
+from django.template import loader
 import requests
 
-#Home 
+#Home view
 def homepage(request):
     return render(request, 'index.html')
 
-#Game
+#Game view
 def game(request):
     return render(request, 'game.html')
 
-#About me
+#About me view
 def aboutme(request):
     return render(request, 'aboutme.html')
 
-#Store
+#Store view
 def store(request):
     return render(request, 'store.html')
 
-#Sign Up
+#Sign Up view
 def signup(request):
     if request.method == "GET":
         return render(request, "signup.html")
@@ -32,12 +34,12 @@ def signup(request):
             #Against multiple registrations.
             email = request.POST.get("email")
             if User.objects.filter(email=email).exists():
-                return render(request, "existingaccount.html")
+                return render(request, "response.html", {"data":"existing account"})
             #Check for identical passwords.
             password = request.POST.get("password")
             password1 = request.POST.get("pasword")
             if password != password1:
-                return render(request, "invalidpassword.html")
+                return render(request, "response.html", {"data":"invalid password"})
             #Registration save.
             user = User.objects.create_user(username=email, email=email, password=password)
             user.save()
@@ -49,7 +51,7 @@ def signup(request):
             #Formal error handing.
             return render(request, 'index.html')
 
-#Log In
+#Log In view
 def Login(request):
     if request.method == "GET":
         return render(request, "login.html")
@@ -64,68 +66,86 @@ def Login(request):
                 login(request, user)
                 return render(request, 'index.html')
             else:
-                #Incorrect login credentials.
-                return render(request, "unsuccessfullogin.html")
+                return render(request, "response.html", {"data":"unsuccessfullogin"})
         except:
             #Formal error handing.
             return render(request, 'index.html')
 
-#Log Out
+#Log Out view
 def Logout(request):
     logout(request)
     auth_views.LogoutView.as_view()
     return render(request, 'index.html')
-    
-#Contact
+
+#Contact view
 @login_required
 def contact(request):
     form = ContactForm()
     if request.method == "POST":
-        form = ContactForm(request.POST)
-        #Form check.
-        if form.is_valid():
-            name = form.cleaned_data['name']
-            email = form.cleaned_data['email']
-            theme = form.cleaned_data['themes']
-            message = form.cleaned_data['message']
-            #Organizing datas.
-            contents1 = [
-                "Name:", name, "Message:", message
-            ]
-            message_body1 = "\n".join(contents1)
-            #Datas send to me.
-            email_to_send1 = EmailMessage(
-                subject = theme,
-                body = message_body1,
-                from_email= email, 
-                to = ['kovacsdavid648@gmail.com'],
-                reply_to= [email],
-            )
-            email_to_send1.send()
-            #Instant auto reply in email to user.
-            contents2 = [
-                f'Dear {name},', 'I have received your message, and I will respond shortly from the email address kovacsdavid648@gmail.com. Thank you in advance for your patience and understanding!', 'Best regards,', 'Kovács Dávid'
-            ]
-            message_body2 = "\n".join(contents2)
-            email_to_send2 = EmailMessage(
-                subject = "Auto-reply",
-                body =   message_body2,
-                from_email= 'kovacsdavid648@gmail.com', 
-                to = [email],
-                reply_to= ['kovacsdavid648@gmail.com'],
-            )
-            email_to_send2.send()
-            #Finish.
-            return render(request, 'contact_response.html', {"name":name})
-    return render(request, "contact.html", {'form':form})
-
-def money (request):
-    response = requests.get("https://api.coingecko.com/api/v3/simple/price", params={"ids": "bitcoin", "vs_currencies": "usd"})
-    if response.status_code == 200:
-        bitcoin_data = response.json()
-        bitcoin_price_usd = bitcoin_data["bitcoin"]["usd"]
-        bitcoin_price_usd = int(bitcoin_price_usd)
-        usd_price_bitcoin = round(1 / bitcoin_price_usd, 9)
+        try:
+            form = ContactForm(request.POST)
+            #Form check.
+            if form.is_valid():
+                name = form.cleaned_data['name']
+                email = form.cleaned_data['email']
+                theme = form.cleaned_data['themes']
+                message = form.cleaned_data['message']
+                #Organizing datas.
+                contents1 = [
+                    "Name:", name, "Message:", message
+                ]
+                message_body1 = "\n".join(contents1)
+                #Datas send to me.
+                email_to_send1 = EmailMessage(
+                    subject = theme,
+                    body = message_body1,
+                    from_email= email, 
+                    to = ['kovacsdavid648@gmail.com'],
+                    reply_to= [email],
+                )
+                email_to_send1.send()
+                #Instant auto reply in email to user.
+                contents2 = [
+                    f'Dear {name},', 'I have received your message, and I will respond shortly from the email address kovacsdavid648@gmail.com. Thank you in advance for your patience and understanding!', 'Best regards,', 'Kovács Dávid'
+                ]
+                message_body2 = "\n".join(contents2)
+                email_to_send2 = EmailMessage(
+                    subject = "Auto-reply",
+                    body =   message_body2,
+                    from_email= 'kovacsdavid648@gmail.com', 
+                    to = [email],
+                    reply_to= ['kovacsdavid648@gmail.com'],
+                )
+                email_to_send2.send()
+                #Finish.
+                return render(request, 'contact_response.html', {"name":name})
+        except:
+            # Formal error handing.
+            return render(request, "index.html")
     else:
-        bitcoin_price_usd = "It was not possible to retrieve the exchange rate of bitcoin usd pair."
+        return render(request, "contact.html", {'form':form})
+
+# Money view :)
+def money (request):
+    try:
+        # Get the current bitcoin price from CoinGecko API.
+        response = requests.get("https://api.coingecko.com/api/v3/simple/price", params={"ids": "bitcoin", "vs_currencies": "usd"})
+    except:
+        # Formal error handing.
+        return render(request, 'money.html', {'bitcoin_price_usd': "?", 'usd_price_bitcoin':"?"})
+    # Check the Response.
+    if response.status_code == 200:
+        try:
+            bitcoin_data = response.json()
+            bitcoin_price_usd = bitcoin_data["bitcoin"]["usd"]
+            # Bitcoin price in USD.
+            bitcoin_price_usd = int(bitcoin_price_usd)
+            # USD price in Bitcoin.
+            usd_price_bitcoin = round(1 / bitcoin_price_usd, 9)
+        except:
+            # Formal error handing.
+            return render(request, 'money.html', {'bitcoin_price_usd': "?", 'usd_price_bitcoin':"?"})
+    else:
+        bitcoin_price_usd = "?"
+        usd_price_bitcoin = "?"
     return render(request, 'money.html', {'bitcoin_price_usd': bitcoin_price_usd, 'usd_price_bitcoin':usd_price_bitcoin})

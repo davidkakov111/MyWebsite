@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unsuccessful Log In</title>
-    {% comment %} CSS {% endcomment %}
+    {% comment %} Title. {% endcomment %}
+    <title>Response</title>
+    {% comment %} Css {% endcomment %}
     <style>
         h1 {
             text-align: center;
@@ -26,12 +27,19 @@
     </style>
 </head>
 <body>
+{% comment %} Respones types. {% endcomment %}
+{%if data == "existing account"%}
+    {% comment %} Text. {% endcomment %}
+    <h1>This email address is already in use! <a href="{%url 'login'%}"> Log In </a> or <a href="{%url 'signup'%}"> Sign Up</a>!</h1>
+{%elif data == "invalid password"%}
+    {% comment %} Text. {% endcomment %}
+    <h1>The passwords do not match. <a href="{%url 'signup'%}">Sign Up</a> again!</h1>
+{%elif data == "unsuccessfullogin"%}
     {% comment %} Text. {% endcomment %}
     <h1>Incorrect login credentials! Try <a href="{%url 'login'%}"> again</a>!</h1>
-    {%load static%}
-    {% comment %} Image. {% endcomment %}
-    <div>
-        <img src="{%static 'stop.png'%}" alt="Again!">
-    </div>    
+{%endif%}
+{%load static%}
+{% comment %} Image. {% endcomment %}
+<img src="{%static 'stop.png'%}">
 </body>
 </html>

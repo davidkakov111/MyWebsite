@@ -7,10 +7,6 @@
 <link rel="stylesheet" type="text/css" href="{% static 'game.css' %}">
 {%endblock head%}
 {%block content%}
-{% comment %} Background video. {% endcomment %}
-<div class="fullscreen-bg">
-    <video src="../static/background.mp4" class="fullscreen" loop muted autoplay poster="../static/poster.jpg"></video>
-</div>
 {% comment %} Yellow island. {% endcomment %}
 <div class="island">
     {% comment %} Text. {% endcomment %}
@@ -22,12 +18,11 @@
     Below, you'll find images of the game and instructions for launching. I wish you a pleasant gaming experience! </p>
     <br>
     {% comment %} Horizontal overflow container. {% endcomment %}
-    {%load static%}
     <div class="image-container">
         {% comment %} Images. {% endcomment %}
-        <img src="{% static 'game1.jpg' %}" alt="Game 1">
-        <img src="{% static 'game2.jpg' %}" alt="Game 2">
-        <img src="{% static 'game3.jpg' %}" alt="Game 3">
+        <img src="{% static 'game1.jpg' %}">
+        <img src="{% static 'game2.jpg' %}">
+        <img src="{% static 'game3.jpg' %}">
     </div>
     <br>
     {% comment %} Text. {% endcomment %}
@@ -76,9 +71,7 @@
         <div class="btton">
             <button class="download" onclick="downloadGame()">Download</button>
         </div>
-    {% endif %}
-    {% comment %} Download button for unauthenticated users. {% endcomment %}
-    {% if not user.is_authenticated %}
+    {%else%}
         <div class="btton">
             <button class="download" onclick='location.href="{%url "login"%}"'>Log in to<br>Download</button>
         </div>
