@@ -6,7 +6,7 @@
     text-align: center;
     width: 300px;
     height: 440px;
-    margin-bottom: 5%;
+    margin-bottom: 90px;
     padding: 2%;
     padding-top: 1%;
     padding-bottom: 1%;
@@ -16,6 +16,8 @@
 .content {
     text-align: center;
     display: inline-block;
+    left: 50%;
+    width: 85%;
 }
 .content label {
     display: block;
@@ -24,6 +26,12 @@
 .content input {
     display: block;
     margin: 0 auto;
+}
+#email {
+    width: 100%;
+}
+#password {
+    width: 100%;
 }
 .boxx {
     position: relative;
@@ -80,15 +88,39 @@ p {
 #pasword {
     background-color: rgba(205, 205, 140);
 }
-@media (min-width: 1900px) {
-    .hrright {
-        right: -7%;
-    }
-    .hrleft {
-        left: -7%;
-    }
-    .or {
-        font-size: 14px;
+@media (min-width: 1000px) {
+    @media (min-height: 800px) {
+        .island {
+            width: 420px;
+            height: 590px;
+        }
+        h1 {
+            font-size: 55px;
+        }
+        .content label {
+            font-size: 25PX;
+        }
+        .content input {
+            height: 50px;
+        }
+        .or {
+            font-size: 20px;
+        }
+        .container {
+            width: 90px;
+            height: 90px;
+        }
+        #email::placeholder {
+            font-size: 22px;
+        }
+        #password::placeholder {
+            font-size: 22px;
+        }
+        #submit {
+            width: 130px;
+            height: 50px;
+            font-size: 22px;
+        }
     }
 }
 @media (max-width: 1200px) {

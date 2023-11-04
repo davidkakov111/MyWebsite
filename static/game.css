@@ -1,13 +1,37 @@
-.image-container {
-    display: flex;
-    overflow: auto;
-    white-space: nowrap;
+.ContOut {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
 }
-.image-container img {
-    max-width: 60%;
-    height: auto;
-    margin-right: 5px;
-    margin-left: 5px
+.image_container_container {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    width: 4287px;
+    height: 250px;
+}
+.image_container {
+    position: absolute;
+    overflow: hidden;
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.image_container img{
+    width: 10.611%;
+    margin-right: 0.25%;
+    margin-left: 0.25%;
+}
+.img_cont_0 {
+    animation: pushing0 30s linear;
+}
+.img_cont_1 {
+    animation: pushing1 60s linear infinite;
+}
+.img_cont_2 {
+    right: -100%;
+    animation: pushing2 60s linear infinite;
+    animation-delay: 30s;
 }
 h1 {
     text-align: center;
@@ -26,7 +50,8 @@ h1 {
     left: 50%;
     transform: translateX(-50%);
     background-color: rgb(179, 176, 13);
-    box-shadow: 0px 0px 20px rgba(0, 0, 0);
+    box-shadow: 0px 0px 20px rgb(0, 0, 0);
+    overflow: hidden;
 }
 .fs {
     font-size: 20px;
@@ -69,20 +94,51 @@ p {
     position: relative;
     margin-bottom: 50px;
 }
+@keyframes pushing0 {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%); 
+    }
+}
+@keyframes pushing1 {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%); 
+    }
+}
+@keyframes pushing2 {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-200%); 
+    }
+}
+@media (min-width: 1600px) {
+    .image_container_container {
+        width: 5144px;
+        height: 300px;
+    }
+}
 @media (max-width: 767px) {
     .island {
         width: 85%;
     }
 } 
 @media (max-width: 500px) {
+    .image_container_container {
+        width: 2572px;
+        height: 150px;
+    }
     .fs {
         font-size: 18px;
     }
     p {
         font-size: 18px;
-    }
-    .image-container img {
-        max-width: 80%;
     }
 }
 @media (max-width: 400px) {

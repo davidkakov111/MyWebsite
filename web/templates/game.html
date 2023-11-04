@@ -15,14 +15,52 @@
     This game turned out to be quite large, but I believe it was worth the invested energy because it has become a very enjoyable game!
     In this game you are the main character, a businessman, who tries to collect bitcoins throughout the challenges of the game, guarded by animals and other dangerous creatures.
     These entities inflict damage upon contact, so it's better to avoid them to prevent any fatal consequences. But don't forget to collect the bitcoins that these entities guard, because if you successfully gather all 20 bitcoins, I'll reward you with a heartfelt thank you! 
-    Below, you'll find images of the game and instructions for launching. I wish you a pleasant gaming experience! </p>
+    I wish you a pleasant gaming experience! </p>
     <br>
-    {% comment %} Horizontal overflow container. {% endcomment %}
-    <div class="image-container">
-        {% comment %} Images. {% endcomment %}
-        <img src="{% static 'game1.jpg' %}">
-        <img src="{% static 'game2.jpg' %}">
-        <img src="{% static 'game3.jpg' %}">
+    {% comment %} Horizontal overflow main container. {% endcomment %}
+    <div class="ContOut">
+        {% comment %} Container of the image containers. {% endcomment %}
+        <div class="image_container_container">
+            {% comment %} Image container. {% endcomment %}
+            <div class="image_container img_cont_0">
+                {% comment %} Images. {% endcomment %}
+                <img src="{% static 'game1.jpg' %}">
+                <img src="{% static 'game2.jpg' %}">
+                <img src="{% static 'game3.jpg' %}">
+                <img src="{% static 'game4.jpg' %}">
+                <img src="{% static 'game5.jpg' %}">
+                <img src="{% static 'game6.jpg' %}">
+                <img src="{% static 'game7.jpg' %}">
+                <img src="{% static 'game8.jpg' %}">
+                <img src="{% static 'game9.jpg' %}">
+            </div>
+            {% comment %} Image container. {% endcomment %}
+            <div class="image_container img_cont_1">
+                {% comment %} Images. {% endcomment %}
+                <img src="{% static 'game1.jpg' %}">
+                <img src="{% static 'game2.jpg' %}">
+                <img src="{% static 'game3.jpg' %}">
+                <img src="{% static 'game4.jpg' %}">
+                <img src="{% static 'game5.jpg' %}">
+                <img src="{% static 'game6.jpg' %}">
+                <img src="{% static 'game7.jpg' %}">
+                <img src="{% static 'game8.jpg' %}">
+                <img src="{% static 'game9.jpg' %}">
+            </div>
+            {% comment %} Image container. {% endcomment %}
+            <div class="image_container img_cont_2">
+                {% comment %} Images. {% endcomment %}
+                <img src="{% static 'game1.jpg' %}">
+                <img src="{% static 'game2.jpg' %}">
+                <img src="{% static 'game3.jpg' %}">
+                <img src="{% static 'game4.jpg' %}">
+                <img src="{% static 'game5.jpg' %}">
+                <img src="{% static 'game6.jpg' %}">
+                <img src="{% static 'game7.jpg' %}">
+                <img src="{% static 'game8.jpg' %}">
+                <img src="{% static 'game9.jpg' %}">
+            </div>
+        </div>
     </div>
     <br>
     {% comment %} Text. {% endcomment %}
@@ -34,13 +72,13 @@
         remaining ones flagged it as risky or potentially containing 
         a virus. This is because the game has a .exe extension, which is 
         often considered risky by these antivirus engines. However, you 
-        can view the results of the virus scan by <a href="https://www.virustotal.com/gui/file/3410b0575dbd261af7180c6aae27fb2e4765a5110a3fa57aa90358cb5a4f74aa">clicking here</a>.
-        The game is open-source, so you can also inspect and download the game's code 
-        by <a href="https://github.com/davidkakov111/My_Game.git">clicking here</a>. So, there's no reason to worry. </p>
+        can view the results of the <a href="https://www.virustotal.com/gui/file/3410b0575dbd261af7180c6aae27fb2e4765a5110a3fa57aa90358cb5a4f74aa">virus scan</a>.
+        The game is open-source, so you can also inspect and download the 
+        <a href="https://github.com/davidkakov111/My_Game.git">game's code</a>. So, there's no reason to worry. </p>
     {% comment %} Dropdown text. {% endcomment %}
     <details>
         {% comment %} "Button text". {% endcomment %}
-        <summary class="fs" style="cursor: pointer;">Please click here for the guide on how to <b>launch</b> the Game!</summary>
+        <summary class="fs" style="cursor: pointer;">Guide to <b>launch</b> the Game!</summary>
         <ol>
             {% comment %} Dropdown content. {% endcomment %}
             <li class="fs">After the download is complete, <abbr title="Right-click on the folder, then click on the option 'Extract All' button. After that, choose the destination where you want to extract the files.">extract the files</abbr>.</li>
@@ -55,8 +93,8 @@
     {% comment %} Text. {% endcomment %}
     <p>Are you up for the challenge? By clicking the button below, you can download and dive headfirst into the adventure. <b>Download it now!</b></p>
     <br>
-    {% comment %} Script for download from GitHub. {% endcomment %}
     <script>
+        {% comment %} Download the game from GitHub. {% endcomment %}
         function downloadGame() {
             var link = document.createElement('a');
             link.href = 'https://github.com/davidkakov111/zip/raw/main/ANIMAL_INVASION.zip';
@@ -65,6 +103,30 @@
             link.click();
             document.body.removeChild(link);
         }
+        {% comment %} Set the display of the .img_cont_0 to "none" after the animation is done. {% endcomment %}
+        document.addEventListener("DOMContentLoaded", function () {
+            const elementToAnimate = document.querySelector(".img_cont_0");
+            elementToAnimate.addEventListener("animationend", function () {
+              elementToAnimate.style.display = "none";
+            });
+          });
+        {% comment %}  {% endcomment %}
+        document.addEventListener("DOMContentLoaded", function () {
+            const element = document.querySelector(".ContOut");
+            const elementToAnimate0 = document.querySelector(".img_cont_0");
+            const elementToAnimate1 = document.querySelector(".img_cont_1");
+            const elementToAnimate2 = document.querySelector(".img_cont_2");
+            element.addEventListener("mouseenter", function () {
+              elementToAnimate0.style.animationPlayState = "paused";
+              elementToAnimate1.style.animationPlayState = "paused";
+              elementToAnimate2.style.animationPlayState = "paused";
+            });
+            element.addEventListener("mouseleave", function () {
+              elementToAnimate0.style.animationPlayState = "running";
+              elementToAnimate1.style.animationPlayState = "running";
+              elementToAnimate2.style.animationPlayState = "running";
+            });
+          });
     </script>
     {% comment %} Download button for authenticated users. {% endcomment %}
     {% if user.is_authenticated %}
