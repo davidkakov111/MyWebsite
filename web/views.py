@@ -1,3 +1,4 @@
+# Imports
 from django.shortcuts import render
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
@@ -5,8 +6,6 @@ from django.contrib.auth.decorators import login_required
 from .forms import ContactForm
 from django.core.mail import EmailMessage
 from django.contrib.auth import views as auth_views
-from django.http import HttpResponse
-from django.template import loader
 import requests
 
 #Home view
@@ -24,6 +23,10 @@ def aboutme(request):
 #Store view
 def store(request):
     return render(request, 'store.html')
+
+# Handling 404 error view
+def handler404(request, exception):
+    return render(request, 'handler404.html')
 
 #Sign Up view
 def signup(request):
@@ -44,8 +47,8 @@ def signup(request):
             user = User.objects.create_user(username=email, email=email, password=password)
             user.save()
             #Automatic login.
-            Users = authenticate(request, username=email, password=password)
-            login(request, Users)
+            UseR = authenticate(request, username=email, password=password)
+            login(request, UseR)
             return render(request, "index.html")
         except:
             #Formal error handing.
@@ -72,6 +75,7 @@ def Login(request):
             return render(request, 'index.html')
 
 #Log Out view
+@login_required
 def Logout(request):
     logout(request)
     auth_views.LogoutView.as_view()
@@ -119,13 +123,16 @@ def contact(request):
                 email_to_send2.send()
                 #Finish.
                 return render(request, 'contact_response.html', {"name":name})
+            else:
+                # Formal error handing.
+                return render(request, "index.html")
         except:
             # Formal error handing.
             return render(request, "index.html")
     else:
         return render(request, "contact.html", {'form':form})
 
-# Money view :)
+# Money view 
 def money (request):
     try:
         # Get the current bitcoin price from CoinGecko API.

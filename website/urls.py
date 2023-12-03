@@ -33,7 +33,10 @@ urlpatterns = [
     path('logout/', views.Logout, name='logout'),
     path('contact/', views.contact, name='contact'),
     path('social-auth/', include('social_django.urls', namespace='social')),
-    path('money/', views.money, name="money")
+    path('money/', views.money, name="money"),
 ]
+# For Vercel
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+# For handling 404 error
+handler404 = 'web.views.handler404'
