@@ -20,9 +20,9 @@ def game(request):
 def aboutme(request):
     return render(request, 'aboutme.html')
 
-#Store view
-def store(request):
-    return render(request, 'store.html')
+# web3shop view
+def web3shop(request):
+    return render(request, 'web3shop.html')
 
 # Handling 404 error view
 def handler404(request, exception):
