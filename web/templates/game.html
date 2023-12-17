@@ -97,7 +97,7 @@
         {% comment %} Download the game from GitHub. {% endcomment %}
         function downloadGame() {
             var link = document.createElement('a');
-            link.href = 'https://github.com/davidkakov111/zip/raw/main/ANIMAL_INVASION.zip';
+            link.href = 'https://github.com/davidkakov111/My_Game/raw/zip/ANIMAL_INVASION.zip';
             link.download = 'ANIMAL_INVASION.zip';
             document.body.appendChild(link);
             link.click();
@@ -110,7 +110,7 @@
               elementToAnimate.style.display = "none";
             });
           });
-        {% comment %}  {% endcomment %}
+        {% comment %} Img animation {% endcomment %}
         document.addEventListener("DOMContentLoaded", function () {
             const element = document.querySelector(".ContOut");
             const elementToAnimate0 = document.querySelector(".img_cont_0");
