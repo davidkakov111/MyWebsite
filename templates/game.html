@@ -9,13 +9,18 @@
 {%block content%}
 {% comment %} Yellow island. {% endcomment %}
 <div class="island">
+    {% comment %} Papagal images {% endcomment %}
+    <div id="greenpapagal">
+        <img position="relative" width="100%" height="100%" src="{% static 'greenpapagal.png'%}">
+    </div>
+    <div id="bluepapagal">
+        <img position="relative" width="100%" height="100%" src="{% static 'bluepapagal.png'%}">
+    </div>
     {% comment %} Text. {% endcomment %}
-    <h1>Animal invasion!</h1>
-    <p>This is the first larger-scale 2D game that I've created, written in <a href="https://www.python.org/">Python</a> programing language, using the <a href="https://api.arcade.academy/en/latest/">Arcade</a> game developer module (<a href="https://github.com/davidkakov111/My_Game.git">Check it out on github</a>). 
-    This game turned out to be quite large, but I believe it was worth the invested energy because it has become a very enjoyable game!
-    In this game you are the main character, a businessman, who tries to collect bitcoins throughout the challenges of the game, guarded by animals and other dangerous creatures.
-    These entities inflict damage upon contact, so it's better to avoid them to prevent any fatal consequences. But don't forget to collect the bitcoins that these entities guard, because if you successfully gather all 20 bitcoins, I'll reward you with a heartfelt thank you! 
-    I wish you a pleasant gaming experience! </p>
+    <h1>Animal Invasion</h1>
+    <p>I'm excited to introduce you to Animal Invasion, a 2D game crafted with Python using the Arcade game developer module. This project represents the first significant milestone in my journey as a developer.</p>
+    <h4>Game Overview:</h4>
+    <p>In Animal Invasion, you assume the role of a determined businessman on a quest to collect bitcoins amidst a myriad of challenges. Navigate through treacherous terrain guarded by various creatures, each posing a threat upon contact. Dodge these obstacles with finesse to safeguard your progress and maximize your chances of success. Remember, every bitcoin collected brings you closer to victory – gather all 20 to earn my heartfelt gratitude!</p>
     <br>
     {% comment %} Horizontal overflow main container. {% endcomment %}
     <div class="ContOut">
@@ -63,36 +68,40 @@
         </div>
     </div>
     <br>
+    <h4>Risk Assessment:</h4>
     {% comment %} Text. {% endcomment %}
-    <p>It's possible that your computer might hesitate to open 
-        the file due to potential risks associated with .exe files. 
-        I've checked my game using VirusTotal, which scanned it with 
-        63 antivirus engines. The final result was that more than 85%
-        of the antivirus engines considered the game safe, while the 
-        remaining ones flagged it as risky or potentially containing 
-        a virus. This is because the game has a .exe extension, which is 
-        often considered risky by these antivirus engines. However, you 
-        can view the results of the <a href="https://www.virustotal.com/gui/file/3410b0575dbd261af7180c6aae27fb2e4765a5110a3fa57aa90358cb5a4f74aa">virus scan</a>.
-        The game is open-source, so you can also inspect and download the 
-        <a href="https://github.com/davidkakov111/My_Game.git">game's code</a>. So, there's no reason to worry. </p>
-    {% comment %} Dropdown text. {% endcomment %}
-    <details>
-        {% comment %} "Button text". {% endcomment %}
-        <summary class="fs" style="cursor: pointer;">Guide to <b>launch</b> the Game!</summary>
-        <ol>
-            {% comment %} Dropdown content. {% endcomment %}
-            <li class="fs">After the download is complete, <abbr title="Right-click on the folder, then click on the option 'Extract All' button. After that, choose the destination where you want to extract the files.">extract the files</abbr>.</li>
-            <li class="fs">Afterward, open the <abbr title="The folder name is ANIMAL_INVASION"> extracted folder</abbr>.</li>
-            <li class="fs">Open the folder named 'dist'.</li>
-            <li class="fs">Open the next <abbr title="The folder name is ANIMAL_INVASION"> folder </abbr> as well.</li>
-            <li class="fs">To start the game, open the ANIMAL_INVASION.exe file.</li>
-            <li class="fs">I wish you the best of luck with your gameplay!</li>
-        </ol>
-    </details>
+    <p>I understand the importance of ensuring a safe gaming experience. While the game's .exe extension may trigger caution from some antivirus engines, rest assured, I've meticulously vetted Animal Invasion using VirusTotal. Over 85% of antivirus engines deemed it safe, with the remaining flagging it due to the file extension's inherent risk perception. For transparency, you can review the detailed scan <a href="https://www.virustotal.com/gui/file/3410b0575dbd261af7180c6aae27fb2e4765a5110a3fa57aa90358cb5a4f74aa">results</a> and access the game's open-source code for added peace of mind.</p>
+    <h4>Guide to <b>launch</b> the Game:</h4>
+    <ol>
+        {% comment %} Dropdown content. {% endcomment %}
+        <li class="fs">After the download is complete, <abbr title="Right-click on the folder, then click on the option 'Extract All' button. After that, choose the destination where you want to extract the files.">extract the files</abbr>.</li>
+        <li class="fs">Afterward, open the <abbr title="The folder name is ANIMAL_INVASION"> extracted folder</abbr>.</li>
+        <li class="fs">Open the folder named 'dist'.</li>
+        <li class="fs">Open the next <abbr title="The folder name is ANIMAL_INVASION"> folder </abbr> as well.</li>
+        <li class="fs">To start the game, open the ANIMAL_INVASION.exe file.</li>
+        <li class="fs">I wish you the best of luck with your gameplay!</li>
+    </ol>
     <br>
+    <h4>Get Started:</h4>
     {% comment %} Text. {% endcomment %}
-    <p>Are you up for the challenge? By clicking the button below, you can download and dive headfirst into the adventure. <b>Download it now!</b></p>
+    <p>Are you ready to conquer Animal Invasion? Click the button below to download and embark on an unforgettable gaming experience. Let the adventure begin!</p>
     <br>
+    <div class="buttons-container">
+        {% if user.is_authenticated %}
+            {% comment %} Download button for authenticated users. {% endcomment %}
+            <button class="buttons" onclick="downloadGame()">DOWNLOAD</button>
+        {%else%}
+            <button class="buttons" onclick='location.href="{%url "login"%}"'>DOWNLOAD</button>
+        {% endif %}
+        <button class="buttons" onclick='location.href="https://github.com/davidkakov111/My_Game.git"'>SOURCE CODE</button>
+    </div>
+    {% comment %} Main character and solider images {% endcomment %}
+    <div id="maincharacter">
+        <img position="relative" width="100%" height="100%" src="{% static 'gamemaincharacter.png'%}">
+    </div>
+    <div id="solidercharacter">
+        <img position="relative" width="100%" height="100%" src="{% static 'solidercharacter.png'%}">
+    </div>
     <script>
         {% comment %} Download the game from GitHub. {% endcomment %}
         function downloadGame() {
@@ -128,16 +137,5 @@
             });
           });
     </script>
-    {% comment %} Download button for authenticated users. {% endcomment %}
-    {% if user.is_authenticated %}
-        <div class="btton">
-            <button class="download" onclick="downloadGame()">Download</button>
-        </div>
-    {%else%}
-        <div class="btton">
-            <button class="download" onclick='location.href="{%url "login"%}"'>Log in to<br>Download</button>
-        </div>
-        <br>
-    {% endif %}
 </div>
 {%endblock content%}

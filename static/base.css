@@ -91,10 +91,6 @@ a:visited {
 #logoutimg:active {
     width: 90%;
 }
-#Home {
-    font-size: 20px;
-    margin-top: -3px;
-}
 .btns {
     position: absolute;
     display: flex;

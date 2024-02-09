@@ -10,8 +10,12 @@
     padding: 2%;
     padding-top: 1%;
     padding-bottom: 1%;
-    background-color: rgb(179, 176, 13);
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px); 
+    -webkit-backdrop-filter: blur(20px);
+    color: black;
     box-shadow: 0px 0px 20px rgba(0, 0, 0);
+    border-radius: 5%;
 }
 h1 {
     cursor: default;
@@ -42,6 +46,10 @@ p {
 .content input {
     display: block;
     margin: 0 auto;
+    background-color: rgb(0, 153, 255);
+}
+.content input:hover {
+    background-color: rgb(8, 127, 207);
 }
 .boxx {
     position: relative;
@@ -83,50 +91,53 @@ p {
     transform: translateX(-50%);
 }
 #email {
-    background-color: rgba(205, 205, 140);
+    background-color: aliceblue;
 }
 #password {
-    background-color: rgba(205, 205, 140);
+    background-color: aliceblue;
 }
 #pasword {
-    background-color: rgba(205, 205, 140);
+    background-color: aliceblue;
 }
-@media (min-width: 1000px) {
-    @media (min-height: 850px) {
-        .island {
-            width: 420px;
-            height: 700px;
-        }
-        h1 {
-            font-size: 55px;
-        }
-        .content label {
-            font-size: 25PX;
-        }
-        .content input {
-            height: 50px;
-        }
-        .or {
-            font-size: 20px;
-        }
-        .container {
-            width: 90px;
-            height: 90px;
-        }
-        #email::placeholder {
-            font-size: 22px;
-        }
-        #password::placeholder {
-            font-size: 22px;
-        }
-        #pasword::placeholder {
-            font-size: 22px;
-        }
-        #submit {
-            width: 130px;
-            height: 50px;
-            font-size: 22px;
-        }
+@media (min-width: 1300px) and (max-height: 850px) {
+    .island {
+        padding: 1%;
+    }
+}
+@media (min-width: 1000px) and (min-height: 850px) {
+    .island {
+        width: 420px;
+        height: 700px;
+    }
+    h1 {
+        font-size: 55px;
+    }
+    .content label {
+        font-size: 25PX;
+    }
+    .content input {
+        height: 50px;
+    }
+    .or {
+        font-size: 20px;
+    }
+    .container {
+        width: 90px;
+        height: 90px;
+    }
+    #email::placeholder {
+        font-size: 22px;
+    }
+    #password::placeholder {
+        font-size: 22px;
+    }
+    #pasword::placeholder {
+        font-size: 22px;
+    }
+    #submit {
+        width: 130px;
+        height: 50px;
+        font-size: 22px;
     }
 }
 @media (max-width: 700px) {

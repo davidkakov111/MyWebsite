@@ -8,8 +8,14 @@
     width: 50%;
     left: 50%;
     transform: translateX(-50%);
-    background-color: rgb(179, 176, 13);
-    box-shadow: 0px 0px 20px rgba(0, 0, 0);
+    background-color: rgba(255, 254, 254, 0.2);
+    backdrop-filter: blur(20px); 
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0px 0px 30px rgba(0, 0, 0);
+    border-radius: 5%;
+}
+select:hover {
+    cursor: pointer;
 }
 p {
     text-align: center;
@@ -17,6 +23,7 @@ p {
     font-weight: 600;
     font-family: Verdana;
     cursor: default;
+    color: black;
 }
 .center {
     position: absolute;
@@ -24,8 +31,16 @@ p {
     transform: translateX(-50%);
     bottom: 2.3%;
 }
+.center input {
+    background-color: rgb(23, 177, 254);
+    color: black;
+}
+.center input:hover {
+    background-color: rgb(0, 170, 255);
+}
 .main-content {
     margin-bottom: 50px;
+    color: black;
 }
 @media (max-width: 767px) {
     .island {

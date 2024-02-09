@@ -6,7 +6,6 @@ from django.contrib.auth.decorators import login_required
 from .forms import ContactForm
 from django.core.mail import EmailMessage
 from django.contrib.auth import views as auth_views
-import requests
 
 #Home view
 def homepage(request):
@@ -20,11 +19,15 @@ def game(request):
 def aboutme(request):
     return render(request, 'aboutme.html')
 
-# web3shop view
+#Web3shop view
 def web3shop(request):
     return render(request, 'web3shop.html')
 
-# Handling 404 error view
+#Movie Catalog view
+def MovieCatalog(request):
+    return render(request, 'moviecatalog.html')
+
+#Handling 404 error view
 def handler404(request, exception):
     return render(request, 'handler404.html')
 
@@ -131,28 +134,3 @@ def contact(request):
             return render(request, "index.html")
     else:
         return render(request, "contact.html", {'form':form})
-
-# Money view 
-def money (request):
-    try:
-        # Get the current bitcoin price from CoinGecko API.
-        response = requests.get("https://api.coingecko.com/api/v3/simple/price", params={"ids": "bitcoin", "vs_currencies": "usd"})
-    except:
-        # Formal error handing.
-        return render(request, 'money.html', {'bitcoin_price_usd': "?", 'usd_price_bitcoin':"?"})
-    # Check the Response.
-    if response.status_code == 200:
-        try:
-            bitcoin_data = response.json()
-            bitcoin_price_usd = bitcoin_data["bitcoin"]["usd"]
-            # Bitcoin price in USD.
-            bitcoin_price_usd = int(bitcoin_price_usd)
-            # USD price in Bitcoin.
-            usd_price_bitcoin = round(1 / bitcoin_price_usd, 9)
-        except:
-            # Formal error handing.
-            return render(request, 'money.html', {'bitcoin_price_usd': "?", 'usd_price_bitcoin':"?"})
-    else:
-        bitcoin_price_usd = "?"
-        usd_price_bitcoin = "?"
-    return render(request, 'money.html', {'bitcoin_price_usd': bitcoin_price_usd, 'usd_price_bitcoin':usd_price_bitcoin})
